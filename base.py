@@ -27,9 +27,9 @@ class onepbase(object):
         self.connection_status = self.connect(self.application_name)
         if self.connection_status is False:
             sys.exit(-1)
-        self.logNetworkElementStatus()
-        self.logSessionProperties()
-        self.logSessionStatistics()
+        # self.logNetworkElementStatus()
+        # self.logSessionProperties()
+        # self.logSessionStatistics()
 
     def setConfigProperties(self,property_file):
         config = ConfigParser.ConfigParser()

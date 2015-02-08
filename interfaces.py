@@ -28,7 +28,7 @@ class DeviceInterfaces(onepbase):
             if networkInterface.interface_type == interfaceType:
                 address = networkInterface.get_address_list()
                 if address and elemAddress not in address:
-                    interface_address_list.append((networkInterface, address))
+                    interface_address_list.append((networkInterface.name, address))
         return interface_address_list
 
     def get_all_interfaces(self):
@@ -54,11 +54,20 @@ class DeviceInterfaces(onepbase):
             self.logger.error(e)
         return None
 
-    
+    def get_interface_prefix(self,networkInterface):
+        prefixes = list()
+        for prefix in networkInterface.get_prefix_list():
+            prefixes.append(prefix.prefix_length)
+        return prefixes
+
+    def setInterfaceIPAddress(self,networkInterface,address,prefix=24):
+        if networkInterface == None:
+            self.logger.error("No interfaces are available!")
+            return None
 
 
 if __name__ == "__main__":
     interface = DeviceInterfaces()
-    print(interface.getInterfaceOfType("gigabitethernet"))
-    print(interface.get_up_interfaces())
+    print(interface.getInterfaceOfType("any"))
+    print(interface.get_interface_prefix(interface.get_up_interfaces()))
     interface.disconnect()
