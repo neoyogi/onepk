@@ -10,7 +10,7 @@ class DeviceInterfaces(onepbase):
         super(DeviceInterfaces,self).__init__()
 
 
-    def getInterfaceOfType(self,interface_Type,has_address_assigned=False):
+    def getInterfacesOfType(self,interface_Type,has_address_assigned=False):
         if interface_Type == "loopback":
             interfaceType = NetworkInterface.InterfaceTypes.ONEP_IF_TYPE_LOOPBACK
         elif interface_Type == "ethernet":
@@ -32,11 +32,18 @@ class DeviceInterfaces(onepbase):
         return interface_address_list
 
     def get_all_interfaces(self):
-        interfaceList = None
+        interfaceList = dict()
+        interfaces = None
+        interfaceAddress = None
+        interfaceName = None
         try:
-            interfaceList = self.network_element.get_interface_list(onep.interfaces.InterfaceFilter())
+            interfaces = self.network_element.get_interface_list(onep.interfaces.InterfaceFilter())
         except Exception, e:
             self.logger.error(e)
+        for eachinterface in interfaces:
+            interfaceName = eachinterface.name
+            interfaceAddress = eachinterface.get_address_list()
+            interfaceList[interfaceName] = (eachinterface,interfaceAddress)
         return interfaceList
 
     def get_address_for_interface(self, network_interface):
@@ -68,6 +75,7 @@ class DeviceInterfaces(onepbase):
 
 if __name__ == "__main__":
     interface = DeviceInterfaces()
-    print(interface.getInterfaceOfType("any"))
+    print(interface.getInterfacesOfType("any"))
     print(interface.get_interface_prefix(interface.get_up_interfaces()))
+    print(interface.get_all_interfaces())
     interface.disconnect()
