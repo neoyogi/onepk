@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.aaa.OnepAAAAttributeType</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.aaa-module.html">Package&nbsp;aaa</a> ::
+        Module&nbsp;OnepAAAAttributeType
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.aaa.OnepAAAAttributeType-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module OnepAAAAttributeType</h1><p class="nomargin-top"></p>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.aaa.OnepAAAAttributeType-module.html#OnepAAAAttributeType" class="summary-name">OnepAAAAttributeType</a> = <code title="enum('ONEP_AAA_AT_INVALID', 'ONEP_AAA_AT_USER_NAME', 'ONEP_AAA_AT_USER\
+_PASSWORD', 'ONEP_AAA_AT_CHAP_ID', 'ONEP_AAA_AT_NAS_IP_ADDRESS', 'ONEP\
+_AAA_AT_INTERFACE', 'ONEP_AAA_AT_SERVICE_TYPE', 'ONEP_AAA_AT_FRAMED_PR\
+OTOCOL', 'ONEP_AAA_AT_IPV4_ADDRESS', 'ONEP_AAA_AT_IPV4_NETMASK', 'ONEP\
+_AAA_AT_ROUTING', 'ONEP_AAA_AT_ACL', 'ONEP_AAA_AT_FRAMED_MTU', 'ONEP_A\
+AA_AT_LINK_COMPRESSION', 'ONEP_AAA_AT_LOGIN_IP_ADDR_HOST', 'ONEP_AAA_A\
+T_LOGIN_SERVICE', 'ONEP_AAA_AT_LOGIN_TCP_PORT', 'ONEP_AAA_AT_MESSAGE',\
+ 'ONEP_AAA_AT_CALLBACK', 'ONEP_AAA_AT_ROUTE', 'ONEP_AAA_AT_STATE', 'ON\
+...">enum('ONEP_AAA_AT_INVALID', 'ONEP_AAA_A<code class="variable-ellipsis">...</code></code><br />
+      #  IETF 000 , &quot;Invalid&quot;, String #  IETF 001 , 
+      &quot;User-Name&quot;, String #  IETF 002 , 
+      &quot;User-Password&quot;, Binary #  IETF 003 , 
+      &quot;CHAP-Password&quot;, Binary #  IETF 004 , 
+      &quot;NAS-IP-Address&quot;, IPv4 Address #  IETF 005 , 
+      &quot;NAS-Port&quot;, Integer AND #      *  IETF 087 , 
+      &quot;NAS-Port-Id&quot;, String #  IETF 006 , 
+      &quot;Service-Type&quot;, Enum #  IETF 007 , 
+      &quot;Framed-Protocol&quot;, Enum #  IETF 008 , 
+      &quot;Framed-IP-Address&quot;, IPv4 Address #  IETF 009 , 
+      &quot;Framed-IP-Netmask&quot;, IPv4 Address #  IETF 010 , 
+      &quot;Framed-Routing&quot;, Integer #  IETF 011 , 
+      &quot;Filter-Id&quot;, Binary #  IETF 012 , &quot;Framed-MTU&quot;, 
+      Integer #  IETF 013 , &quot;Framed-Compression&quot;, Enum #  IETF 
+      014 , &quot;login-ip-addr-host&quot;, IPv4 Address #  IETF 015 , 
+      &quot;Login-Service&quot;, Enum #  IETF 016 , 
+      &quot;login-tcp-port&quot;, Integer #  IETF 018 , 
+      &quot;Reply-Message&quot;, Binary #  IETF 019 , 
+      &quot;Callback-Number&quot;, String #  IETF 022 , 
+      &quot;Framed-Route&quot;, String AND #      *  IETF 099 , 
+      &quot;Framed-IPv6-Route&quot;, String #  IETF 024 , 
+      &quot;State&quot;, Binary #  IETF 025 , &quot;Class&quot;, Binary #  
+      IETF 027 , &quot;Session-Timeout&quot;, Integer #  IETF 028 , 
+      &quot;Idle-Timeout&quot;, Integer #  IETF 029 , 
+      &quot;Termination-Action&quot;, AAA_AF_BOOLEAN, #  IETF 030 , 
+      &quot;Called-Station-Id&quot;, String #  IETF 031 , 
+      &quot;Calling-Station-Id&quot;, String #  IETF 032 , 
+      &quot;Nas-Identifier&quot;, String #  IETF 040 , 
+      &quot;Acct-Status-Type&quot;, Enum #  IETF 041 , 
+      &quot;Acct-Delay-Time&quot;, Integer #  IETF 042 , 
+      &quot;Acct-Input-Octets&quot;, Integer #  IETF 043 , 
+      &quot;Acct-Output-Octets&quot;, Integer #  IETF 044 , 
+      &quot;Acct-Session-Id&quot;, Integer #  IETF 045 , 
+      &quot;Acct-Authentic&quot;, Enum #  IETF 046 , 
+      &quot;Acct-Session-Time&quot;, Integer #  IETF 047 , 
+      &quot;Acct-Input-Packets&quot;, Integer #  IETF 048 , 
+      &quot;Acct-Output-Packets&quot;, Integer #  IETF 049 , 
+      &quot;Acct-Terminate-Cause&quot;, Enum #  IETF 050 , 
+      &quot;Multilink-Session-ID&quot;, String #  IETF 051 , 
+      &quot;Acct-Link-Count&quot;, Integer #  IETF 052 , 
+      &quot;Acct-Input-Giga-Words&quot;, Integer #  IETF 053 , 
+      &quot;Acct-Output-Giga-Words&quot;, Integer #  IETF 055 , 
+      &quot;Event-Timestamp&quot;, Integer #  IETF 060 , 
+      &quot;CHAP-Challenge&quot;, Binary #  IETF 061 , 
+      &quot;NAS-Port-Type&quot;, Enum #  IETF 062 , &quot;Port-Limit&quot;,
+      Integer #  IETF 064 , &quot;Tunnel-Type&quot;, Enum #  IETF 065 , 
+      &quot;Tunnel-Medium-Type&quot;, Enum #  IETF 066 , 
+      &quot;Tunnel-Client-Endpoint&quot;, String #  IETF 067 , 
+      &quot;Tunnel-Server-Endpoint&quot;, String #  IETF 068 , 
+      &quot;Acct-Tunnel-Connection&quot;, String #  IETF 069 , 
+      &quot;Tunnel-Password&quot;, Binary #  IETF 077 , 
+      &quot;Connect-Info&quot;, String #  IETF 079 , 
+      &quot;EAP-Message&quot;, Binary #  IETF 080 , 
+      &quot;Message-Authenticator&quot;, Binary #  IETF 081 , 
+      &quot;Tunnel-Private-Group-Id&quot;, String #  IETF 082 , 
+      &quot;Tunnel-Assignment-Id&quot;, String #  IETF 083 , 
+      &quot;Tunnel-Preference&quot;, Integer #  IETF 085 , 
+      &quot;Acct-Interim-Interval&quot;, Integer #  IETF 086 , 
+      &quot;Tunnel-Packets-Lost&quot;, Integer #  IETF 088 , 
+      &quot;Framed-IP-Pool&quot;, String AND #      *  IETF 100 , 
+      &quot;Framed-IPv6-Pool&quot;, String #  IETF 090 , 
+      &quot;Tunnel-Client-Auth-ID&quot;, String #  IETF 091 , 
+      &quot;Tunnel-Server-Auth-ID&quot;, String #  IETF 095 , 
+      &quot;NAS-IPv6-Address&quot;, Binary #  IETF 096 , 
+      &quot;Framed-Interface-Id&quot;, Binary #  IETF 097 , 
+      &quot;Framed-IPv6-Prefix&quot;, Binary #  IETF 098 , 
+      &quot;login-ipv6-addr-host&quot;, Binary #  IETF 101 , 
+      &quot;Dynamic-Author-Error-Cause&quot;, Enum #  IETF 102 , 
+      &quot;EAP-Key-Name&quot;, Binary #  IETF 123 , 
+      &quot;Delegated-IPv6-Prefix&quot;, Binary #  Cisco AVpair, 
+      &quot;app-attr&quot;, String #  Cisco AVpair, 
+      &quot;allowed-app&quot;, String #  Cisco AVpair, 
+      &quot;allowed-action&quot;, String #  Cisco AVpair, 
+      &quot;auto-acct&quot;, String
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables Details</span></td>
+</tr>
+</table>
+<a name="OnepAAAAttributeType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">OnepAAAAttributeType</h3>
+  <p>#  IETF 000 , &quot;Invalid&quot;, String #  IETF 001 , 
+  &quot;User-Name&quot;, String #  IETF 002 , &quot;User-Password&quot;, 
+  Binary #  IETF 003 , &quot;CHAP-Password&quot;, Binary #  IETF 004 , 
+  &quot;NAS-IP-Address&quot;, IPv4 Address #  IETF 005 , 
+  &quot;NAS-Port&quot;, Integer AND #      *  IETF 087 , 
+  &quot;NAS-Port-Id&quot;, String #  IETF 006 , &quot;Service-Type&quot;, 
+  Enum #  IETF 007 , &quot;Framed-Protocol&quot;, Enum #  IETF 008 , 
+  &quot;Framed-IP-Address&quot;, IPv4 Address #  IETF 009 , 
+  &quot;Framed-IP-Netmask&quot;, IPv4 Address #  IETF 010 , 
+  &quot;Framed-Routing&quot;, Integer #  IETF 011 , &quot;Filter-Id&quot;, 
+  Binary #  IETF 012 , &quot;Framed-MTU&quot;, Integer #  IETF 013 , 
+  &quot;Framed-Compression&quot;, Enum #  IETF 014 , 
+  &quot;login-ip-addr-host&quot;, IPv4 Address #  IETF 015 , 
+  &quot;Login-Service&quot;, Enum #  IETF 016 , &quot;login-tcp-port&quot;,
+  Integer #  IETF 018 , &quot;Reply-Message&quot;, Binary #  IETF 019 , 
+  &quot;Callback-Number&quot;, String #  IETF 022 , 
+  &quot;Framed-Route&quot;, String AND #      *  IETF 099 , 
+  &quot;Framed-IPv6-Route&quot;, String #  IETF 024 , &quot;State&quot;, 
+  Binary #  IETF 025 , &quot;Class&quot;, Binary #  IETF 027 , 
+  &quot;Session-Timeout&quot;, Integer #  IETF 028 , 
+  &quot;Idle-Timeout&quot;, Integer #  IETF 029 , 
+  &quot;Termination-Action&quot;, AAA_AF_BOOLEAN, #  IETF 030 , 
+  &quot;Called-Station-Id&quot;, String #  IETF 031 , 
+  &quot;Calling-Station-Id&quot;, String #  IETF 032 , 
+  &quot;Nas-Identifier&quot;, String #  IETF 040 , 
+  &quot;Acct-Status-Type&quot;, Enum #  IETF 041 , 
+  &quot;Acct-Delay-Time&quot;, Integer #  IETF 042 , 
+  &quot;Acct-Input-Octets&quot;, Integer #  IETF 043 , 
+  &quot;Acct-Output-Octets&quot;, Integer #  IETF 044 , 
+  &quot;Acct-Session-Id&quot;, Integer #  IETF 045 , 
+  &quot;Acct-Authentic&quot;, Enum #  IETF 046 , 
+  &quot;Acct-Session-Time&quot;, Integer #  IETF 047 , 
+  &quot;Acct-Input-Packets&quot;, Integer #  IETF 048 , 
+  &quot;Acct-Output-Packets&quot;, Integer #  IETF 049 , 
+  &quot;Acct-Terminate-Cause&quot;, Enum #  IETF 050 , 
+  &quot;Multilink-Session-ID&quot;, String #  IETF 051 , 
+  &quot;Acct-Link-Count&quot;, Integer #  IETF 052 , 
+  &quot;Acct-Input-Giga-Words&quot;, Integer #  IETF 053 , 
+  &quot;Acct-Output-Giga-Words&quot;, Integer #  IETF 055 , 
+  &quot;Event-Timestamp&quot;, Integer #  IETF 060 , 
+  &quot;CHAP-Challenge&quot;, Binary #  IETF 061 , 
+  &quot;NAS-Port-Type&quot;, Enum #  IETF 062 , &quot;Port-Limit&quot;, 
+  Integer #  IETF 064 , &quot;Tunnel-Type&quot;, Enum #  IETF 065 , 
+  &quot;Tunnel-Medium-Type&quot;, Enum #  IETF 066 , 
+  &quot;Tunnel-Client-Endpoint&quot;, String #  IETF 067 , 
+  &quot;Tunnel-Server-Endpoint&quot;, String #  IETF 068 , 
+  &quot;Acct-Tunnel-Connection&quot;, String #  IETF 069 , 
+  &quot;Tunnel-Password&quot;, Binary #  IETF 077 , 
+  &quot;Connect-Info&quot;, String #  IETF 079 , &quot;EAP-Message&quot;, 
+  Binary #  IETF 080 , &quot;Message-Authenticator&quot;, Binary #  IETF 
+  081 , &quot;Tunnel-Private-Group-Id&quot;, String #  IETF 082 , 
+  &quot;Tunnel-Assignment-Id&quot;, String #  IETF 083 , 
+  &quot;Tunnel-Preference&quot;, Integer #  IETF 085 , 
+  &quot;Acct-Interim-Interval&quot;, Integer #  IETF 086 , 
+  &quot;Tunnel-Packets-Lost&quot;, Integer #  IETF 088 , 
+  &quot;Framed-IP-Pool&quot;, String AND #      *  IETF 100 , 
+  &quot;Framed-IPv6-Pool&quot;, String #  IETF 090 , 
+  &quot;Tunnel-Client-Auth-ID&quot;, String #  IETF 091 , 
+  &quot;Tunnel-Server-Auth-ID&quot;, String #  IETF 095 , 
+  &quot;NAS-IPv6-Address&quot;, Binary #  IETF 096 , 
+  &quot;Framed-Interface-Id&quot;, Binary #  IETF 097 , 
+  &quot;Framed-IPv6-Prefix&quot;, Binary #  IETF 098 , 
+  &quot;login-ipv6-addr-host&quot;, Binary #  IETF 101 , 
+  &quot;Dynamic-Author-Error-Cause&quot;, Enum #  IETF 102 , 
+  &quot;EAP-Key-Name&quot;, Binary #  IETF 123 , 
+  &quot;Delegated-IPv6-Prefix&quot;, Binary #  Cisco AVpair, 
+  &quot;app-attr&quot;, String #  Cisco AVpair, &quot;allowed-app&quot;, 
+  String #  Cisco AVpair, &quot;allowed-action&quot;, String #  Cisco 
+  AVpair, &quot;auto-acct&quot;, String</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_AAA_AT_INVALID', 'ONEP_AAA_AT_USER_NAME', 'ONEP_AAA_AT_USER<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+_PASSWORD', 'ONEP_AAA_AT_CHAP_ID', 'ONEP_AAA_AT_NAS_IP_ADDRESS', 'ONEP<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+_AAA_AT_INTERFACE', 'ONEP_AAA_AT_SERVICE_TYPE', 'ONEP_AAA_AT_FRAMED_PR<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+OTOCOL', 'ONEP_AAA_AT_IPV4_ADDRESS', 'ONEP_AAA_AT_IPV4_NETMASK', 'ONEP<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+_AAA_AT_ROUTING', 'ONEP_AAA_AT_ACL', 'ONEP_AAA_AT_FRAMED_MTU', 'ONEP_A<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+AA_AT_LINK_COMPRESSION', 'ONEP_AAA_AT_LOGIN_IP_ADDR_HOST', 'ONEP_AAA_A<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+T_LOGIN_SERVICE', 'ONEP_AAA_AT_LOGIN_TCP_PORT', 'ONEP_AAA_AT_MESSAGE',<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ 'ONEP_AAA_AT_CALLBACK', 'ONEP_AAA_AT_ROUTE', 'ONEP_AAA_AT_STATE', 'ON<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:25 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

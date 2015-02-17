@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.core.util.Version.Version</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.core-module.html">Package&nbsp;core</a> ::
+        <a href="onep.core.util-module.html">Package&nbsp;util</a> ::
+        <a href="onep.core.util.Version-module.html">Module&nbsp;Version</a> ::
+        Class&nbsp;Version
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.core.util.Version.Version-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Version</h1><p class="nomargin-top"></p>
+<center>
+
+</center>
+<hr />
+<pre class="literalblock">
+
+Version class represents the version of a onePK component. 
+The component could be the client-side package version or the 
+server-side version. 
+For onePK applications to work, the server-side and the client-side
+versioning have to be compatible.
+
+onePK has foundation package and optional packages (e.g. LISP, VTY etc)
+Each of these packages have a server side which resides
+on the Network Element and a client side which resides in the
+application in any of the hosting models. The client side
+corresponds to the SDK package used by application.
+
+The onePK server side as well as client-side versions are identified 
+with a version number in the form of:  &quot;&lt;b&gt;&lt;i&gt;major.minor.maintenance&lt;/i&gt;&lt;/b&gt;&quot;
+Any &quot;major&quot; release upgrade is not backward compatible, whereas any &quot;minor&quot;
+or &quot;maintenance&quot; release upgrade is backward compatible. 
+
+- Major version number reflects the main version of the package
+and changes only when API signatures changes in non-compatible way. 
+- Minor version numbers changes when new functionalities are added, such
+as addition of new API, or addition of a new parameter to an API in
+backward-compatible way.
+- Maintenance version numbers changes with bug fixes, document changes or
+support library changes.
+
+The usage of versioning by applications is described below.
+Consider the case where the application client side is running a higher 
+minor version than the server side.
+
+Case 1:
+
+Application does no version checking. 
+In this case calling a method not supported on the connected Network Element will result in 
+application runtime fault (application will receive exception 
+specifying the method is not supported, causing it to abort).
+
+Case 2:
+
+Application checks versions and exits gracefully. 
+In this case there is no runtime fault and application can exit gracefully.
+
+Case 3:
+
+Application checks versions, and continues. 
+When Application knows that it only uses Network Element-supported methods 
+there is no problem. 
+When Application uses methods not supported on the connected Network Element, it would need to 
+set a condition that causes the application to synthesize the missing 
+functionality using only the Network Element supported methods instead.
+
+</pre>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">major</span>,
+        <span class="summary-sig-arg">minor</span>,
+        <span class="summary-sig-arg">maintenance</span>)</span><br />
+      Constructor for internal use only.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#check_major" class="summary-sig-name">check_major</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">major</span>)</span><br />
+      This method checks if the Version instance matches a given specific 
+      major number.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#check_minor" class="summary-sig-name">check_minor</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">minor</span>)</span><br />
+      This method checks if the Version instance matches a given specific 
+      minor number.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#check_maintenance" class="summary-sig-name">check_maintenance</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">maintenance</span>)</span><br />
+      This method checks if the Version instance matches a given specific 
+      maintenance number.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#check_exact" class="summary-sig-name">check_exact</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">major</span>,
+        <span class="summary-sig-arg">minor</span>,
+        <span class="summary-sig-arg">maintenance</span>)</span><br />
+      This method checks if this Version instance matches a given specific 
+      major, minor and maintenance number.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#__str__" class="summary-sig-name">__str__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      str(x)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS METHODS ==================== -->
+<a name="section-ClassMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#get_package_version" class="summary-sig-name">get_package_version</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">ssName</span>)</span><br />
+      This method gets the package (Service Set) version which this client 
+      program is currently using.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#get_element_version" class="summary-sig-name">get_element_version</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">element</span>,
+        <span class="summary-sig-arg">ssName</span>)</span><br />
+      This method gets the Service Set version of the given Network 
+      Element.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.core.util.Version.Version-class.html#version_check" class="summary-sig-name">version_check</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">element</span>,
+        <span class="summary-sig-arg">ssName</span>)</span><br />
+      This method checks version compatibility between the a given Network 
+      Element and this client program.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.core.util.Version.Version-class.html#VersionCompare" class="summary-name">VersionCompare</a> = <code title="enum('ONEP_VERSION_NCP', 'ONEP_VERSION_MATCH', 'ONEP_VERSION_GT', 'ONE\
+P_VERSION_LT')">enum('ONEP_VERSION_NCP', 'ONEP_VERSION_MATCH'<code class="variable-ellipsis">...</code></code><br />
+      The VersionCompare enum describes the comparison values when the 
+   * versions of SDK and Network Element are compared using the
+   * version check methods in Version class.
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="major"></a><span class="summary-name">major</span><br />
+      Major version of the Version object
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="minor"></a><span class="summary-name">minor</span><br />
+      Minor version of the Version object
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="maintenance"></a><span class="summary-name">maintenance</span><br />
+      Maintenance version of the Version object
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">major</span>,
+        <span class="sig-arg">minor</span>,
+        <span class="sig-arg">maintenance</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructor for internal use only.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_package_version"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_package_version</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">ssName</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method gets the package (Service Set) version which this client 
+  program is currently using.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ssName</code></strong> - Specifies the Service Set whose version is requested.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Version object for the Service Set. If the input service set name
+          is null or unsupported, null will be returned.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_element_version"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_element_version</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">element</span>,
+        <span class="sig-arg">ssName</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method gets the Service Set version of the given Network 
+  Element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>element</code></strong> - The Network Element to get the version from.</li>
+        <li><strong class="pname"><code>ssName</code></strong> - Specifies the Service Set whose version is requested.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Version object for the Service Set. If any of the input 
+          parameters is null or unsupported, null will be returned.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when the Network Element is not connected.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to the Network Element.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="version_check"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">version_check</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">element</span>,
+        <span class="sig-arg">ssName</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method checks version compatibility between the a given Network 
+  Element and this client program. The result of the compatibility check is
+  provided in the form of VersionCompare enum values. The specified Network
+  Element should be in the connected state for the API to validate the 
+  compatibility check.</p>
+  <p>The results of the comparison should be interpreted as follows:</p>
+  <ul>
+    <li>
+      ONEP_VERSION_NCP:   The client side and Network Element versions are 
+      not compatible for the given package
+    </li>
+    <li>
+      ONEP_VERSION_GT:    The client side version is greater than NE 
+      version for the given package
+    </li>
+    <li>
+      ONEP_VERSION_LT:    The client side version is less than Network 
+      Element version for the given package
+    </li>
+    <li>
+      ONEP_VERSION_MATCH: The client side and Network Element versions are 
+      exact match
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>element</code></strong> - The Network Element with which the applications version 
+          compatibility check needs to be done for the specified package.</li>
+        <li><strong class="pname"><code>ssName</code></strong> - Specifies the Service Set to be checked.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The result of version check is returned as value of 
+          VersionCompare enum. If any of the input parameters is null or 
+          unsupported, null will be returned.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when the Network Element is not connected.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to the Network Element.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="check_major"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">check_major</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">major</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method checks if the Version instance matches a given specific 
+  major number.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>major</code></strong> - Integer representing the major number.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>True if the major version have exact match; false otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="check_minor"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">check_minor</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">minor</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method checks if the Version instance matches a given specific 
+  minor number.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>minor</code></strong> - Integer representing the major number.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>True if the minor version have exact match; false otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="check_maintenance"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">check_maintenance</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">maintenance</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method checks if the Version instance matches a given specific 
+  maintenance number.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>maintenance</code></strong> - Integer representing the maintenance number.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>True if the maintenance versions have exact match; false 
+          otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="check_exact"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">check_exact</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">major</span>,
+        <span class="sig-arg">minor</span>,
+        <span class="sig-arg">maintenance</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This method checks if this Version instance matches a given specific 
+  major, minor and maintenance number.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>major</code></strong> - Integer representing the major number.</li>
+        <li><strong class="pname"><code>minor</code></strong> - Integer representing the minor number.</li>
+        <li><strong class="pname"><code>maintenance</code></strong> - Integer representing the maintenance number.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>True if the major, minor and maintenance version have exact 
+          match; false otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__str__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__str__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Informal representation operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>str(x)</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__str__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variable Details</span></td>
+</tr>
+</table>
+<a name="VersionCompare"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">VersionCompare</h3>
+  <pre class="literalblock">
+
+The VersionCompare enum describes the comparison values when the 
+   * versions of SDK and Network Element are compared using the
+   * version check methods in Version class.
+
+</pre>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_VERSION_NCP', 'ONEP_VERSION_MATCH', 'ONEP_VERSION_GT', 'ONE<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+P_VERSION_LT')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:27 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

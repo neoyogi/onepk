@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://www.cisco.com/demo_app:0.2" xmlns:demo="http://www.cisco.com/demo_app:0.2" xmlns:cli_ext="http://www.cisco.com/onep/cli_ext:0.1" targetNamespace="http://www.cisco.com/demo_app:0.2" elementFormDefault="qualified" attributeFormDefault="unqualified"  xml:lang="en">
+    
+    <xs:import namespace="http://www.cisco.com/onep/cli_ext:0.1" schemaLocation="cli_ext_schema.xsd"/>  
+    <xs:annotation>
+        <xs:appinfo>xslt version 0.1</xs:appinfo>
+        <xs:documentation>
+      This schema was by cli-extension ssl.
+    </xs:documentation>
+    </xs:annotation>
+    
+    <xs:element name="cli_tutorial_app">
+    <xs:annotation>
+        <xs:documentation>Cli Extension Tutorial Application</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+        <xs:sequence>
+    
+    
+     <!--start config-cmds-->
+    <xs:element name="config_data" minOccurs="0">
+    <xs:complexType>
+        <xs:sequence>
+         
+    
+    <xs:element name="node_info_cmd" minOccurs="0">
+        <xs:complexType>
+            <xs:sequence>
+            
+                
+        <xs:element name="no" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Negate a command or set a command's default</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+                
+                <xs:element name="node_info" type="node_info_type" />
+              
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+    
+            <xs:element name="app_category_cmd">
+                <xs:complexType>
+                    <xs:sequence>
+                        
+        <xs:element name="no" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Negate a command or set a command's default</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+        <xs:element name="app-category" >
+        
+            <xs:annotation>
+                <xs:documentation>config onep app category name</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+        <xs:element name="name" type="xs:string">
+        
+            <xs:annotation>
+                <xs:documentation>string</xs:documentation>
+            </xs:annotation> 
+        
+         </xs:element> 
+         
+        
+                </xs:sequence>
+                
+            </xs:complexType>
+        </xs:element>
+         
+
+        <!--start list-cmd app_stat_cmd-->
+        <xs:element name="app_stat_cmd" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+            
+        <xs:element name="no" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Negate a command or set a command's default</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+            <xs:element name="app-stats">
+             
+                <xs:annotation>
+                    <xs:documentation>add app statistics</xs:documentation>
+                </xs:annotation>
+           
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="key" type="xs:boolean" fixed="true"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+                
+       </xs:element> 
+           
+              <xs:choice minOccurs="0" maxOccurs="unbounded" >
+             
+            <xs:element name="users_cmd">
+                <xs:complexType>
+                    <xs:sequence>
+                        
+        <xs:element name="no" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Negate a command or set a command's default</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+        <xs:element name="users" >
+        
+            <xs:annotation>
+                <xs:documentation>Number of users</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+        <xs:element name="count" type="xs:integer">
+        
+            <xs:annotation>
+                <xs:documentation>count</xs:documentation>
+            </xs:annotation> 
+        
+         </xs:element> 
+         
+        
+                </xs:sequence>
+                
+            </xs:complexType>
+        </xs:element>
+         
+
+            <xs:element name="price_cmd">
+                <xs:complexType>
+                    <xs:sequence>
+                        
+        <xs:element name="no" minOccurs="0">
+            <xs:annotation>
+                <xs:documentation>Negate a command or set a command's default</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+        <xs:element name="price" >
+        
+            <xs:annotation>
+                <xs:documentation>purchase price</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+        <xs:element name="amount" type="xs:integer">
+        
+            <xs:annotation>
+                <xs:documentation>number</xs:documentation>
+            </xs:annotation> 
+        
+         </xs:element> 
+         
+        
+                </xs:sequence>
+                
+            </xs:complexType>
+        </xs:element>
+         
+             
+            </xs:choice>
+             
+        
+                    </xs:sequence>
+                    
+                    <xs:attribute name="mode_prompt" type="xs:string" default="stat"/>
+                     
+                </xs:complexType>
+            </xs:element>
+      
+        
+        
+     <!--end list-cmd app_stat_cmd-->
+
+            </xs:choice>
+        </xs:sequence>      
+    </xs:complexType>
+    </xs:element>
+     <!--end config-cmds-->
+
+   
+     <xs:element name="exec" minOccurs="0">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice maxOccurs="unbounded">
+                
+                        <xs:element name="node_info" type="node_info_type"/>
+
+    
+     <!--start show-cmds -->
+    
+    <xs:element name="show_category_cmd" minOccurs="0">
+    <xs:complexType>
+        <xs:sequence>
+        
+        <xs:element name="show">
+            <xs:annotation>
+                <xs:documentation>Show running system information</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+        <xs:element name="app-category" >
+        
+            <xs:annotation>
+                <xs:documentation>show onep app's category name</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+       
+       </xs:sequence>      
+    </xs:complexType>
+     </xs:element>  
+    
+    <xs:element name="show_stat_cmd" minOccurs="0">
+    <xs:complexType>
+        <xs:sequence>
+        
+        <xs:element name="show">
+            <xs:annotation>
+                <xs:documentation>Show running system information</xs:documentation>
+            </xs:annotation>
+            <xs:complexType/>
+        </xs:element>
+    
+        <xs:element name="statistics" >
+        
+            <xs:annotation>
+                <xs:documentation>onep app statistics</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+       
+       </xs:sequence>      
+    </xs:complexType>
+     </xs:element>  
+    
+     <!--end show-cmds -->
+
+     <!--start exec-cmds-->
+    
+    <xs:element name="clear_stat_cmd" minOccurs="0">
+    <xs:complexType>
+        <xs:sequence>
+       
+        <xs:element name="clear" >
+        
+            <xs:annotation>
+                <xs:documentation>clear</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+        <xs:element name="statistics" >
+        
+            <xs:annotation>
+                <xs:documentation>statistics</xs:documentation>
+            </xs:annotation>
+        
+            <xs:complexType/>
+         </xs:element> 
+        
+       
+       </xs:sequence>      
+    </xs:complexType>
+     </xs:element>  
+    
+     <!--end exec-cmds-->
+
+                 </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+     </xs:element>
+
+        </xs:sequence>
+        <xs:attribute name="version" use="optional" fixed="0.2"/>
+        <xs:attribute name="app-mode-prompt-prefix" use="optional" fixed="demo"/>
+    </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="node_info_type">
+        <xs:sequence>
+            <xs:element name="v0.2">
+                <xs:annotation>
+                    <xs:documentation>application version</xs:documentation>
+                </xs:annotation>
+                <xs:complexType/>
+            </xs:element>
+       
+           <xs:element name="config-domain" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Identifies where the application is running</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            
+            <xs:element name="instance-name" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>instance name</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    </xs:schema>
+    

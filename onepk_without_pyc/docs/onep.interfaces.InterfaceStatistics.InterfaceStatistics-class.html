@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.interfaces.InterfaceStatistics.InterfaceStatistics</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.interfaces-module.html">Package&nbsp;interfaces</a> ::
+        <a href="onep.interfaces.InterfaceStatistics-module.html">Module&nbsp;InterfaceStatistics</a> ::
+        Class&nbsp;InterfaceStatistics
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class InterfaceStatistics</h1><p class="nomargin-top"></p>
+<center>
+
+</center>
+<hr />
+<p>This class represents the Interface Statistics properties of the 
+  network interface.</p>
+  <p>The interface statistics are dynamic software properties, such as 
+  number of packets in, number of errors, and number of out packets. These 
+  properties must always be received on demand from the Network Element, 
+  because they are constantly changing.</p>
+  <p>The interface statistics can be obtained via two methods:</p>
+  <ol start="1">
+    <li>
+      Using the NetworkInterface.get_statistics() method to get an 
+      InterfaceStatistics instance.
+    </li>
+    <li>
+      Using the NetworkInterface.add_interface_statistics_listener() method
+      to register a statistics event listener.
+    </li>
+  </ol>
+  <p>The get_statistics() API only gets a snapshot of the interface 
+  statistics on each invocation. Thus, an application that requires 
+  periodic updates of the statistics must use this API in a loop.</p>
+  <p>The preferred way of retrieving the interface statistics is to use the
+  add_interface_statistics_listener() method, and register for periodically
+  receiving the interface statistics when the filter criteria (specified 
+  through InterfaceStatisticsFilter) are met.</p>
+  <p>This class contains various property attributes corresponding to the 
+  statistics contained in the snapshot. The application must call 
+  get_statistics() on the NetworkInterface whenever it requires the latest 
+  updated values.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#reliability" class="summary-sig-name">reliability</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The reliability of the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_load" class="summary-sig-name">transmit_load</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The transmit load on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_rate_pps" class="summary-sig-name">transmit_rate_pps</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of packets transmitted in packets per second (PPS) on the 
+      associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_rate_bps" class="summary-sig-name">transmit_rate_bps</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of packets transmitted in bits per second (BPS) on the 
+      associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_rate_pps" class="summary-sig-name">receive_rate_pps</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of packets received in packets per second (PPS) on the 
+      associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_rate_bps" class="summary-sig-name">receive_rate_bps</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of packets received in bits per second (BPS) on the 
+      associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_rate_cum_byte" class="summary-sig-name">transmit_rate_cum_byte</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The cumulative number of bytes transmitted from the associated 
+      interface since the last bootup.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_rate_cum_byte" class="summary-sig-name">receive_rate_cum_byte</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The cumulative number of bytes received on the associated interface 
+      since the last bootup.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_load" class="summary-sig-name">receive_load</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The receive load on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_broadcast" class="summary-sig-name">receive_broadcast</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of broadcast packets received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_multicast" class="summary-sig-name">receive_multicast</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of multicast packets received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_unicast" class="summary-sig-name">receive_unicast</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of unicast packets received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_broadcast" class="summary-sig-name">transmit_broadcast</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of broadcast packets transmitted on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_multicast" class="summary-sig-name">transmit_multicast</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of multicast packets transmitted on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_unicast" class="summary-sig-name">transmit_unicast</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of unicast packets transmitted on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_runt" class="summary-sig-name">receive_runt</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of runt packets received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_giant" class="summary-sig-name">receive_giant</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of giant packets received on the asssociated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_throttle" class="summary-sig-name">receive_throttle</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of throttle packets received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_unknown_protocol_drop" class="summary-sig-name">in_unknown_protocol_drop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of unknown protocol messages received on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_packet_drop" class="summary-sig-name">in_packet_drop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of input packets dropped on the associated interface 
+      because the maximum queue size was exceeded.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_error" class="summary-sig-name">in_error</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get the number of errors received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_error_crc" class="summary-sig-name">in_error_crc</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The the number of cyclic redundancy check (CRC) errors on the 
+      associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_error_frame" class="summary-sig-name">in_error_frame</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of input frame errors received on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_error_overrun" class="summary-sig-name">in_error_overrun</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of input buffer overrun errors on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#in_error_ignore" class="summary-sig-name">in_error_ignore</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of input errors that are ignored on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#out_packet_drop" class="summary-sig-name">out_packet_drop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of output packets dropped on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#out_error" class="summary-sig-name">out_error</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of outgoing errors received on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#out_error_underrun" class="summary-sig-name">out_error_underrun</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of output buffer underrun errors on the associated 
+      interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#out_error_reset" class="summary-sig-name">out_error_reset</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of output error resets on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#out_buffer_fail" class="summary-sig-name">out_buffer_fail</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of output buffer failures on the associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#out_buffer_swap" class="summary-sig-name">out_buffer_swap</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The number of output buffers that were swapped out to DRAM on the 
+      associated interface.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#transmit_cum_packet" class="summary-sig-name">transmit_cum_packet</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The cumulative number of packets transmitted from the associated 
+      interface since the last bootup.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#receive_cum_packet" class="summary-sig-name">receive_cum_packet</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The cumulative number of packets received by the associated interface
+      since the last bootup.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.interfaces.InterfaceStatistics.InterfaceStatistics-class.html#InterfaceStatisticsParameter" class="summary-name">InterfaceStatisticsParameter</a> = <code title="enum('ONEP_IF_STAT_RELIABILITY', 'ONEP_IF_STAT_RESETS', 'ONEP_IF_STAT_\
+RX_LOAD', 'ONEP_IF_STAT_RX_BYTES_PER_SEC', 'ONEP_IF_STAT_RX_PKTS_PER_S\
+EC', 'ONEP_IF_STAT_RX_BYTES', 'ONEP_IF_STAT_RX_PKTS_UCAST', 'ONEP_IF_S\
+TAT_RX_PKTS_MCAST', 'ONEP_IF_STAT_RX_PKTS_BCAST', 'ONEP_IF_STAT_IN_PKT\
+S_DROP', 'ONEP_IF_STAT_RX_PKTS_ERRORS', 'ONEP_IF_STAT_IN_PKTS_UNKNOWN'\
+, 'ONEP_IF_STAT_RX_PKTS_RUNTS', 'ONEP_IF_STAT_RX_PKTS_GIANTS', 'ONEP_I\
+F_STAT_RX_PKTS_THROTTLE', 'ONEP_IF_STAT_RX_PKTS_CRC', 'ONEP_IF_STAT_RX\
+_PKTS_FRAME', 'ONEP_IF_STAT_RX_PKTS_OVERRUN', 'ONEP_IF_STAT_TX_LOAD', \
+...">enum('ONEP_IF_STAT_RELIABILITY'<code class="variable-ellipsis">...</code></code><br />
+      ONEP_IF_STAT_RELIABILITY - Reliability of the interface, as a fraction of
+          255 (255/255 is 100 percent reliability), calculated as an exponential
+          average over 5 minutes.
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="reliability"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">reliability</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The reliability of the associated interface.</p>
+  <p>The value returned is from 1 to 255, and is calculated as an 
+  exponential average over 5 minutes.  A value of 255/255 means the 
+  interface is 100 percent reliable.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The reliability.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_load"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_load</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The transmit load on the associated interface.</p>
+  <p>The transmit load returned is a fraction of 255 (255/255 is completely
+  saturated), calculated as an exponential average over 5 minutes.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The transmit load.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_rate_pps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_rate_pps</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of packets transmitted in packets per second (PPS) on the 
+  associated interface.</p>
+  <p>The returned value is the average number of packets transmitted per 
+  second over the load interval time, which is 300 seconds (5 minutes).  
+  The number is an approximation of the rate per second.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The transmit rate PPS.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_rate_bps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_rate_bps</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of packets transmitted in bits per second (BPS) on the 
+  associated interface.</p>
+  <p>The returned value is the average number of bits transmitted per 
+  second over the load interval time, which is 300 seconds (5 minutes). The
+  number is an approximation of the rate per second.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The transmit rate BPS.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_rate_pps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_rate_pps</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of packets received in packets per second (PPS) on the 
+  associated interface.</p>
+  <p>The returned value is the average number of packets received per 
+  second over the load interval time, which is 300 seconds (5 minutes). The
+  number is an approximation of the rate per second.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The receive rate PPS.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_rate_bps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_rate_bps</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of packets received in bits per second (BPS) on the 
+  associated interface.</p>
+  <p>The returned value is the average number of bits received per second 
+  over the load interval time, which is 300 seconds (5 minutes).  The 
+  number is an approximation of the rate per second.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The receive rate BPS.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_rate_cum_byte"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_rate_cum_byte</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The cumulative number of bytes transmitted from the associated 
+  interface since the last bootup.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The cumulative number of bytes transmitted.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_rate_cum_byte"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_rate_cum_byte</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The cumulative number of bytes received on the associated interface 
+  since the last bootup.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The cumulative number of bytes received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_load"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_load</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The receive load on the associated interface.</p>
+  <p>The receive load returned is a fraction of 255 (255/255 is completely 
+  saturated) calculated as an exponential average over 5 minutes.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The receive load.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_broadcast"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_broadcast</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of broadcast packets received on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of broadcast packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_multicast"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_multicast</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of multicast packets received on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of multicast packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_unicast"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_unicast</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of unicast packets received on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of unicast packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_broadcast"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_broadcast</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of broadcast packets transmitted on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number broadcast packets transmitted.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_multicast"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_multicast</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of multicast packets transmitted on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number multicast packets transmitted.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_unicast"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_unicast</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of unicast packets transmitted on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number unicast packets transmitted.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_runt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_runt</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of runt packets received on the associated interface.</p>
+  <p>The runt packets correspond to packets discarded because they are 
+  smaller in length than the physical medium minimum packet size.  For 
+  example, any Ethernet packet that is less than 64 bytes in length is 
+  considered a runt.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of runt packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_giant"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_giant</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of giant packets received on the asssociated interface.</p>
+  <p>The giant packets correspond to packets discarded because they exceed 
+  the physical medium's maximum packet size.  For example, any Ethernet 
+  packet that is greater than 1518 bytes in length is considered a 
+  giant.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of giant packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_throttle"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_throttle</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of throttle packets received on the associated 
+  interface.</p>
+  <p>The returned value indicates the number of times the input buffers of 
+  an interface were cleaned because they were not serviced fast enough or 
+  because they were overwhelmed.  Typically, an explorer storm can cause 
+  the throttles counter to increment. Note that all packets in the input 
+  queue are dropped every time there is a throttle, which causes very slow 
+  performance and may also disrupt existing sessions.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of throttle packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_unknown_protocol_drop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_unknown_protocol_drop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of unknown protocol messages received on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of unknown protocol messages received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_packet_drop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_packet_drop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of input packets dropped on the associated interface 
+  because the maximum queue size was exceeded.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of input packets dropped.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_error"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_error</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the number of errors received on the associated interface.</p>
+  <p>The returned value includes runts, giants, no buffer, cyclic 
+  redundancy check (CRC), frame, overrun, and ignored counts. Other input 
+  related errors can also cause the input errors count to be increased.  
+  Some datagrams may have more than one error; the error count may not 
+  balance with the sum of the enumerated errors, because some datagrams may
+  have more than one error and others may have errors that do not fall into
+  any of the specific categories.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of errors received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_error_crc"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_error_crc</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The the number of cyclic redundancy check (CRC) errors on the 
+  associated interface.</p>
+  <p>The returned value corresponds to CRC-generated mismatches. CRC errors
+  are also reported when a far-end abort occurs and when the idle flag 
+  pattern is corrupted.  The CRC errors can occur even when there is no 
+  data traffic.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of CRC errors received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_error_frame"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_error_frame</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of input frame errors received on the associated 
+  interface.</p>
+  <p>The returned value corresponds to the number of times the receiver 
+  hardware was unable to hand received data to a hardware buffer, because 
+  the input rate exceeded the receiver's ability to handle the data.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of input frame errors received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_error_overrun"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_error_overrun</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of input buffer overrun errors on the associated 
+  interface.</p>
+  <p>The returned value corresponds to the number of received packets 
+  ignored by the interface because the interface hardware ran low on 
+  internal buffers.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of input buffer overrun errors.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="in_error_ignore"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">in_error_ignore</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of input errors that are ignored on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of input errors that are ignored.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="out_packet_drop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">out_packet_drop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of output packets dropped on the associated interface.</p>
+  <p>The returned value corresponds to the sum of all errors that prevented
+  the final transmission of datagrams out of the interface.  A common cause
+  is a low Output Queue size.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of output packets dropped.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="out_error"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">out_error</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of outgoing errors received on the associated 
+  interface.</p>
+  <p>The returned value corresponds to the number of times that the far-end
+  router's transmitter ran faster than the near-end router's receiver was 
+  able to handle.  This situation may never occur or be reported on some 
+  interfaces.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of outgoing errors received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="out_error_underrun"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">out_error_underrun</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of output buffer underrun errors on the associated 
+  interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of output buffer underrun errors.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="out_error_reset"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">out_error_reset</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of output error resets on the associated interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of output error resets.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="out_buffer_fail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">out_buffer_fail</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of output buffer failures on the associated interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of output buffer failures.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="out_buffer_swap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">out_buffer_swap</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The number of output buffers that were swapped out to DRAM on the 
+  associated interface.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The number of output buffers that were swapped out.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transmit_cum_packet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transmit_cum_packet</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The cumulative number of packets transmitted from the associated 
+  interface since the last bootup.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The cumulative number of packets transmitted.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive_cum_packet"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive_cum_packet</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The cumulative number of packets received by the associated interface 
+  since the last bootup.</p>
+  <dl class="fields">
+    <dt>Returns: <code>int</code></dt>
+        <dd>The cumulative number of packets received.</dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@property</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variable Details</span></td>
+</tr>
+</table>
+<a name="InterfaceStatisticsParameter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">InterfaceStatisticsParameter</h3>
+  <pre class="literalblock">
+
+    ONEP_IF_STAT_RELIABILITY - Reliability of the interface, as a fraction of
+          255 (255/255 is 100 percent reliability), calculated as an exponential
+          average over 5 minutes.
+    
+    ONEP_IF_STAT_RESETS - Number of times that an interface has
+      been completely reset.
+    
+    ONEP_IF_STAT_RX_LOAD - Receive rate of the interface, as a fraction of
+      255 (255/255 is 100 percent).
+    
+    ONEP_IF_STAT_RX_BYTES_PER_SEC - Interface receive rate, in bytes per second.
+    
+    ONEP_IF_STAT_RX_PKTS_PER_SEC - Interface receive rate, in packets per second.
+    
+    ONEP_IF_STAT_RX_BYTES - Interface receive cumulative bytes.
+    
+    ONEP_IF_STAT_RX_PKTS_UCAST - Number of unicast packets
+      received by the interface.
+    
+    ONEP_IF_STAT_RX_PKTS_MCAST - Number of multicast packets
+      received by the interface.
+    
+    ONEP_IF_STAT_RX_PKTS_BCAST - Number of broadcast packets
+      received by the interface.    
+    
+    ONEP_IF_STAT_IN_PKTS_DROP - Number of packets dropped
+      because of a full input queue.
+
+    ONEP_IF_STAT_RX_PKTS_ERRORS - Includes runts, giants, no buffer, CRC,
+      frame, overrun, and ignored counts. Other input-related errors can
+      also cause the input errors count to increase, and some datagrams
+      may have more than one error. This sum may not balance with
+      the sum of enumerated input error counts.
+    
+    ONEP_IF_STAT_IN_PKTS_UNKNOWN - Number of packets received with
+      unknown protocol errors.
+    
+    ONEP_IF_STAT_RX_PKTS_RUNTS - Number of packets that are discarded
+      because they are smaller than the minimum packet size of the medium.
+    
+    ONEP_IF_STAT_RX_PKTS_GIANTS - Number of packets that are discarded
+      because they exceed the maximum packet size of the medium.
+`    
+    ONEP_IF_STAT_RX_PKTS_THROTTLE - Number of times the receiver on
+      the port was disabled, possibly because of a buffer or processor overload.
+    
+    ONEP_IF_STAT_RX_PKTS_CRC Cyclic redundancy checksum generated by
+      the originating LAN station or far-end device does not match the
+      checksum calculated from the data received.
+    
+    ONEP_IF_STAT_RX_PKTS_FRAME - Number of packets received
+      incorrectly having a CRC error and a noninteger number of octets.
+    
+    ONEP_IF_STAT_RX_PKTS_OVERRUN - Number of times the receiver
+      hardware was
+      unable to hand received data to a hardware buffer, because the input rate
+      exceeded the receiver's ability to handle the data.
+    
+    ONEP_IF_STAT_TX_LOAD - Transmit rate of the interface as a fraction of
+      255 (255/255 is 100 percent).
+    
+    ONEP_IF_STAT_TX_BYTES_PER_SEC - Interface transmit rate in bytes per
+      second.
+    
+    ONEP_IF_STAT_TX_PKTS_PER_SEC - Interface transmit rate in packets per second.
+
+    ONEP_IF_STAT_TX_BYTES - Interface transmit cumulative bytes.
+    
+    ONEP_IF_STAT_TX_PKTS_UCAST - Number of unicast packets
+      transmit by the interface.
+    
+    ONEP_IF_STAT_TX_PKTS_MCAST - Number of multicast packets
+      transmit by the interface.
+    
+    ONEP_IF_STAT_TX_PKTS_BCAST - Number of broadcast packets
+      transmit by the interface.
+    
+    ONEP_IF_STAT_OUT_PKTS_DROP - Number of packets dropped
+      because of a full output queue.
+      
+    ONEP_IF_STAT_TX_PKTS_ERRORS - Sum of all errors that prevented the final
+      transmission of datagrams out of the interface from being examined. 
+      This may not balance with the sum of the enumerated output errors,
+      because some datagrams may have more than one error, and others may have
+      errors that do not fall into any of the specifically tabulated
+      categories.
+    
+    ONEP_IF_STAT_TX_PKTS_UNDERRUN - Number of times the
+      transmitter has been running faster than the router can handle.
+       
+    ONEP_IF_STAT_TX_PKTS_BUFFER_FAILURES - Number of failed buffers and
+      number of buffers swapped out.
+    
+    ONEP_IF_STAT_TX_PKTS_BUFFER_SWAPPEDOUT - Number of packets swapped to DRAM.
+    
+    ONEP_IF_STAT_TX_PKTS_TAIL_DROPS - Number of tail drop packets.
+    
+    ONEP_IF_STAT_TX_PKTS_VOQ_DROPS - Number of VoQ drop packets.
+    
+    ONEP_IF_STAT_TX_PKTS_REP_ENG_DROP - Number of replication engine drop packets.
+    
+    ONEP_IF_STAT_RX_PKTS - Number of packets received.
+    
+    ONEP_IF_STAT_TX_PKTS - Number of packets transmitted.
+
+    
+
+</pre>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_IF_STAT_RELIABILITY', 'ONEP_IF_STAT_RESETS', 'ONEP_IF_STAT_<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+RX_LOAD', 'ONEP_IF_STAT_RX_BYTES_PER_SEC', 'ONEP_IF_STAT_RX_PKTS_PER_S<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+EC', 'ONEP_IF_STAT_RX_BYTES', 'ONEP_IF_STAT_RX_PKTS_UCAST', 'ONEP_IF_S<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+TAT_RX_PKTS_MCAST', 'ONEP_IF_STAT_RX_PKTS_BCAST', 'ONEP_IF_STAT_IN_PKT<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+S_DROP', 'ONEP_IF_STAT_RX_PKTS_ERRORS', 'ONEP_IF_STAT_IN_PKTS_UNKNOWN'<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+, 'ONEP_IF_STAT_RX_PKTS_RUNTS', 'ONEP_IF_STAT_RX_PKTS_GIANTS', 'ONEP_I<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+F_STAT_RX_PKTS_THROTTLE', 'ONEP_IF_STAT_RX_PKTS_CRC', 'ONEP_IF_STAT_RX<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+_PKTS_FRAME', 'ONEP_IF_STAT_RX_PKTS_OVERRUN', 'ONEP_IF_STAT_TX_LOAD', <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:29 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+Identity Tutorial
+--------------------------
+
+The Identity tutorial shows how to add a network session identified 
+by a set of AAA attributes on the network element. The tutorial also shows 
+how to update the session attributes, fetch the attributes from the session
+on network element, and delete these network sessions.
+
+To run this tutorial:
+
+Notes: Make sure that the onep Python module is installed
+       Python version supported is 2.7.
+              
+   Usage:
+
+   IdentityTutorial.py -a <element hostname or address> \
+         [-t <transport_type>] \
+	     [-C <client cert file> -K <client private key file>] \
+	     [-R <root certificates file>] \
+	     [-P <tls pinning file>]
+
+    -a <element hostname or address> Network element's hostname or IP address.
+    -t <transport type> Transport type (tls|tipc).  Default is TLS.
+    -C <client cert file> Client certificate file required TLS client
+                          authentication.
+    -K <client private key file> Client private key file required for TLS
+                                 client authentication.
+    -R <CA certs file> CA certificates file required for TLS.
+
+    The application will prompt the user to enter username and password that 
+    are configured on the network element you are connecting to.
+
+    For more information on how to use TLS connection please refer to the 
+     Getting Started Guide.

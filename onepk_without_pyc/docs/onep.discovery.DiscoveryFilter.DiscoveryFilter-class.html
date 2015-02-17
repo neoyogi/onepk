@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.discovery.DiscoveryFilter.DiscoveryFilter</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.discovery-module.html">Package&nbsp;discovery</a> ::
+        <a href="onep.discovery.DiscoveryFilter-module.html">Module&nbsp;DiscoveryFilter</a> ::
+        Class&nbsp;DiscoveryFilter
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.discovery.DiscoveryFilter.DiscoveryFilter-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class DiscoveryFilter</h1><p class="nomargin-top"></p>
+<center>
+
+</center>
+<hr />
+<p>The DiscoveryFilter class represents the specifications needed to 
+  register for a service set discovery event from the root network element 
+  and/or its neighbors.</p>
+  <p>The application has to be connected to the root network element to 
+  receive service state change notifications from the root network element 
+  and its neighbors. The application can use the default constructor to 
+  define the service discovery filter or can refine the filter by 
+  selectively setting fields of interest in the service discovery filter 
+  object. When the default service set discovery filter is used, the 
+  application receives all service set change notifications for all the 
+  service sets on root network element and its directly connected 
+  neighbors. The service set discovery filter can also be defined for the 
+  filter events based on additional criteria such as the network element IP
+  address, service set name, version, and service set state.</p>
+  <p>The DiscoveryFilter is passed into the <a 
+  href="onep.element.NetworkElement-module.html" 
+  class="link">add_discovery_listener</a> method. A single DiscoveryFilter 
+  object can be used in multiple calls</p>
+  <p>See <a href="onep.discovery.DiscoveryListener-module.html" 
+  class="link">DiscoveryListener</a></p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.discovery.DiscoveryFilter.DiscoveryFilter-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The default ServiceDiscoveryFilter constructor without specifying any
+      filter criteria.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.discovery.DiscoveryFilter.DiscoveryFilter-class.html#DiscoveryType" class="summary-name">DiscoveryType</a> = <code title="enum('ONEP_DISCOVERY_ALL', 'ONEP_DISCOVERY_LOCAL', 'ONEP_DISCOVERY_NEI\
+GHBOR')">enum('ONEP_DISCOVERY_ALL', 'ONEP_DISCOVERY_LOC<code class="variable-ellipsis">...</code></code><br />
+      Service set type that needs to be filtered.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.discovery.DiscoveryFilter.DiscoveryFilter-class.html#ServiceSetState" class="summary-name">ServiceSetState</a> = <code title="enum('ONEP_SERVICE_SET_STATE_ALL', 'ONEP_SERVICE_SET_ENABLED', 'ONEP_S\
+ERVICE_SET_DISABLED')">enum('ONEP_SERVICE_SET_STATE_ALL', 'ONEP_SER<code class="variable-ellipsis">...</code></code><br />
+      Service set state, either enabled or disabled
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="state"></a><span class="summary-name">state</span> = <code title="property(_get_state, _set_state, None, _doc)">property(_get_state, _set_state, None, _doc)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="name"></a><span class="summary-name">name</span> = <code title="property(_get_name, _set_name, None, _doc)">property(_get_name, _set_name, None, _doc)</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="type"></a><span class="summary-name">type</span> = <code title="property(_get_type, _set_type, None, _doc)">property(_get_type, _set_type, None, _doc)</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The default ServiceDiscoveryFilter constructor without specifying any 
+  filter criteria.</p>
+  <p>Default constructor does not set any filter on the service discovery 
+  notifications, and the application will receive all service change 
+  notifications from the root NE and its neighbors</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variable Details</span></td>
+</tr>
+</table>
+<a name="DiscoveryType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DiscoveryType</h3>
+  <p>Service set type that needs to be filtered. The application can select
+  individual service set types or use ONEP_SERVICE_SET_ALL to set the 
+  filter for all the available service sets.</p>
+  <p>'ONEP_DISCOVERY_ALL' - Local and neighbor service set discovery 
+  'ONEP_DISCOVERY_LOCAL' - Discover service sets on root network element 
+  'ONEP_DISCOVERY_NEIGHBOR' - Service set discovery for directly connected 
+  neighbors of root network element</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_DISCOVERY_ALL', 'ONEP_DISCOVERY_LOCAL', 'ONEP_DISCOVERY_NEI<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+GHBOR')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ServiceSetState"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ServiceSetState</h3>
+  <p>Service set state, either enabled or disabled</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_SERVICE_SET_STATE_ALL', 'ONEP_SERVICE_SET_ENABLED', 'ONEP_S<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ERVICE_SET_DISABLED')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:27 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

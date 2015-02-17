@@ -1,0 +1,89 @@
+
+/*------------------------------------------------------------------
+ * README  
+ *
+ * Cisco ONE-P Python SDK
+ *
+ * Copyright (c) 2011-2014 by Cisco Systems, Inc.
+ * All rights reserved.
+ *------------------------------------------------------------------
+ */
+
+
+Introduction:
+------------
+
+The APIs contained in these modules allow the developer to design
+controller applications that interface to compatible Cisco network
+elements.  These applications will be able to configure the element
+and retrieve statistics.
+
+WARNING:
+It is suggested that the developer be very knowlegable of the
+network element configuration before applying.  You can bring down
+a production network with the wrong setup!
+
+onePK Python API Refrence:
+--------------------------
+The onePK Python API Refrence is provided in HTML format and can be
+found in the docs directory. Open the index.html with a web browser.
+
+Installing Modules
+-------------------
+
+Must have Python version 2.7.
+
+From root of uncompressed directory type:
+
+ python setup.py install
+
+This will install the SDK modules in the standard directory.
+
+If you wish to locate the modules into a custom directory:
+
+ python setup.py install --prefix="<your custom directory>"
+
+This will install the SDK modules in :
+ <your custom directory>/lib/python2.7/site-packages/onep
+Be sure that your custom directory is included in the PYTHONPATH.
+
+
+Creating Application
+--------------------
+
+Must have a Cisco network device capable of communicating
+with ONE-P APIs.  Network Element must also have onep
+configured with the socket transport and have the correct
+onep services activated.  A network interface must be
+configured with a valid IP address and pingable.
+
+First step to communicate with network element is to connect.  See
+sample.py for a very basic example.  You should be able to run:
+
+ ./sample.py
+ 
+ Usage:
+
+    sample.py -a <element address or FQDN> [-t <transport_type>] \
+             [-C <client cert file> -K <client private key file> \
+    	     -R <root certificates file>]
+     
+     -a <ip_addr or FQDN> Network element's IP Address or Fully Qualified Domain Name
+     -t <tls|tipc> Transport type. Default is TLS connection     
+     -C <clientcert.pem> Client certificate file required TLS connection
+        (default location ./clientcert.pem) 
+     -K <clientkey.pem> Client private key file required for TLS connection
+        (default location ./clientkey.pem)
+     -R <nerootca.pem> Root certificate file required for TLS connection
+        (default location ./nerootca.pem)     
+    
+     The application will prompt the user to enter username and password that 
+     are configured on the network element you are connecting to.
+    
+     For more information on how to use TLS connection please refer to the 
+     Getting Started Guide.
+
+
+Happy Scripting!
+
+

@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.policyservice.bulk.BulkService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.policyservice-module.html">Package&nbsp;policyservice</a> ::
+        <a href="onep.policyservice.bulk-module.html">Module&nbsp;bulk</a> ::
+        Class&nbsp;BulkService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.policyservice.bulk.BulkService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class BulkService</h1><p class="nomargin-top"></p>
+<center>
+
+</center>
+<hr />
+<p>BulkService class.</p>
+  <p>The BulkService class provides the enhanced Policy API for submitting 
+  and activating policy in bulk fashion.</p>
+  <p>ActivationHolder in BulkService is provided as a container to group a 
+  policy with its intended targets.</p>
+  <p>The ActivationHolder object is then used to activate the policy in the
+  network element.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">element</span>)</span><br />
+      Constructs a BulkService object.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#create_class" class="summary-sig-name">create_class</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>,
+        <span class="summary-sig-arg">element</span>,
+        <span class="summary-sig-arg">class_name</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Create an instance of ClassMap class</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#create_policy" class="summary-sig-name">create_policy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">type</span>,
+        <span class="summary-sig-arg">element</span>,
+        <span class="summary-sig-arg">policy_name</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Create an instance of PolicyMap class</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#submit_class_map" class="summary-sig-name">submit_class_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*class_maps</span>)</span><br />
+      Submits a list of class maps.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#get_all_bulk_listeners" class="summary-sig-name">get_all_bulk_listeners</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns dict of tuples containing all active bulk listeners in 
+      element</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#async_submit_class_map" class="summary-sig-name">async_submit_class_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">listener</span>,
+        <span class="summary-sig-arg">app_context</span>,
+        <span class="summary-sig-arg">*class_maps</span>)</span><br />
+      Submits a list of class maps asynchronously.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#update_class_map" class="summary-sig-name">update_class_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*class_maps</span>)</span><br />
+      Update a list of class maps in the network element.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#delete_class_map" class="summary-sig-name">delete_class_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*class_maps</span>)</span><br />
+      Deletes a list of class maps from the network element.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#submit_policy_map" class="summary-sig-name">submit_policy_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*policy_maps</span>)</span><br />
+      Submits a list of policy maps.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#async_submit_policy_map" class="summary-sig-name">async_submit_policy_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">listener</span>,
+        <span class="summary-sig-arg">app_context</span>,
+        <span class="summary-sig-arg">*policy_maps</span>)</span><br />
+      Submits a list of policy maps asynchronously.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#update_policy_map" class="summary-sig-name">update_policy_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*policy_maps</span>)</span><br />
+      Update a list of policy maps in the network element.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#delete_policy_map" class="summary-sig-name">delete_policy_map</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*policy_maps</span>)</span><br />
+      Deletes a list of policy maps from the network element.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><a href="onep.policyservice.bulk.ActivationHolder-class.html" 
+      class="link">BulkService.ActivationHolder</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#create_activation_holder" class="summary-sig-name">create_activation_holder</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">policy_map</span>,
+        <span class="summary-sig-arg">*targets</span>)</span><br />
+      Creates a ActivationHolder with the supplied policy and targets.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#activate_policy" class="summary-sig-name">activate_policy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*activations</span>)</span><br />
+      Activates the policy to its targets that are specified in the 
+      ActivationHolder list.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#async_activate_policy" class="summary-sig-name">async_activate_policy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">listener</span>,
+        <span class="summary-sig-arg">app_context</span>,
+        <span class="summary-sig-arg">*activations</span>)</span><br />
+      Asynchronously activates the policy to its targets that are specified
+      in the ActivationHolder list.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#deactivate_policy" class="summary-sig-name">deactivate_policy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*activations</span>)</span><br />
+      De-activates the policy from its targets that are specified in the 
+      ActivationHolder list.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#remove_statistic_listener" class="summary-sig-name">remove_statistic_listener</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">listener</span>)</span><br />
+      Removes client statistic listener</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.policyservice.bulk.BulkService-class.html#get_policy_statistics" class="summary-sig-name">get_policy_statistics</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filters</span>,
+        <span class="summary-sig-arg">listener</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">app_context</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">opcode</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Retrieves statistics according to filter specifications.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">element</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Constructs a BulkService object.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>element</code></strong> (<a href="onep.element.NetworkElement.NetworkElement-class.html" 
+          class="link">NetworkElement</a>) - Network Element object.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If constructor parameter is invalid.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="create_class"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_class</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">type</span>,
+        <span class="sig-arg">element</span>,
+        <span class="sig-arg">class_name</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create an instance of ClassMap class</p>
+  <p>@param type @type 
+  {PolicyCapabilitiesType&lt;onep.policyservice.PolicyiCapabilities.PolicyCapabilitiesType&gt;}</p>
+  <p>@param element @type 
+  {NetworkElement&lt;onep.element.NetworkElement.NetworkElement&gt;}</p>
+  <p>@param class_name</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="create_policy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_policy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">type</span>,
+        <span class="sig-arg">element</span>,
+        <span class="sig-arg">policy_name</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create an instance of PolicyMap class</p>
+  <p>@param type @type 
+  {PolicyCapabilitiesType&lt;onep.policyservice.PolicyCapabilities.PolicyCapabilitiesType&gt;}</p>
+  <p>@param element @type 
+  {NetworkElement&lt;onep.element.NetworkElement.NetworkElement&gt;}</p>
+  <p>@param policy_name</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="submit_class_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">submit_class_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*class_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Submits a list of class maps.</p>
+  <p>This will create the class maps in the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>class_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.classmap.ClassMap-class.html" 
+          class="link">ClassMap</a>) - The class maps.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If any ClassMap in *class_maps is invalid.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_all_bulk_listeners"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_all_bulk_listeners</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns dict of tuples containing all active bulk listeners in 
+  element</p>
+  <p>dict of tuple - {(Policy listening class, application context, 
+  ClassMap objects), ...}</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="async_submit_class_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">async_submit_class_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">listener</span>,
+        <span class="sig-arg">app_context</span>,
+        <span class="sig-arg">*class_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Submits a list of class maps asynchronously.</p>
+  <p>This will create the class maps in the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>event_id</code></strong> (<code>int</code>) - ID retrieved from BulkService.get_event_id(). Match to listener 
+          event_id.</li>
+        <li><strong class="pname"><code>class_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.classmap.ClassMap-class.html" 
+          class="link">ClassMap</a>) - The class maps.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If any ClassMap in *class_maps is invalid.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update_class_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update_class_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*class_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update a list of class maps in the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>class_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.classmap.ClassMap-class.html" 
+          class="link">ClassMap</a>) - The class maps to update.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If class_maps has no valid ClassMap.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_class_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_class_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*class_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes a list of class maps from the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>class_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.classmap.ClassMap-class.html" 
+          class="link">ClassMap</a>) - The class maps to delete.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="submit_policy_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">submit_policy_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*policy_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Submits a list of policy maps.</p>
+  <p>This will create the policy maps in the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>policy_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.policymap.PolicyMap-class.html" 
+          class="link">PolicyMap</a>) - The policy maps.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If an PolicyMap in *policy_maps is invalid.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="async_submit_policy_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">async_submit_policy_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">listener</span>,
+        <span class="sig-arg">app_context</span>,
+        <span class="sig-arg">*policy_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Submits a list of policy maps asynchronously.</p>
+  <p>This will create the policy maps in the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>listener</code></strong> (<a 
+          href="onep.policyservice.policymap.PolicySubmitEvent-class.html" 
+          class="link">PolicySubmitEvent</a>) - PolicySubmitEvent class created by user</li>
+        <li><strong class="pname"><code>app_context</code></strong> (Any Python object) - Object sent from user for providing context specific to user</li>
+        <li><strong class="pname"><code>policy_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.policymap.PolicyMap-class.html" 
+          class="link">PolicyMap</a>) - The policy maps.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If an PolicyMap in *policy_maps is invalid.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update_policy_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update_policy_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*policy_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update a list of policy maps in the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>policy_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.policymap.PolicyMap-class.html" 
+          class="link">PolicyMap</a>) - The policy maps to update.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If policy_maps has no valid PolicyMap.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="delete_policy_map"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete_policy_map</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*policy_maps</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deletes a list of policy maps from the network element.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>policy_maps</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.policymap.PolicyMap-class.html" 
+          class="link">PolicyMap</a>) - The policy maps to delete.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="create_activation_holder"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">create_activation_holder</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">policy_map</span>,
+        <span class="sig-arg">*targets</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a ActivationHolder with the supplied policy and targets.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>policy_map</code></strong> (<a href="onep.policyservice.policymap.PolicyMap-class.html" 
+          class="link">PolicyMap</a>) - The policy to be activated.</li>
+        <li><strong class="pname"><code>targets</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.target.Target-class.html" 
+          class="link">Target</a>) - The targets to apply to.</li>
+    </ul></dd>
+    <dt>Returns: <a href="onep.policyservice.bulk.ActivationHolder-class.html" 
+      class="link">BulkService.ActivationHolder</a></dt>
+        <dd>Returns an ActivationHolder object.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - If policy or targets is invalid.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="activate_policy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">activate_policy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*activations</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Activates the policy to its targets that are specified in the 
+  ActivationHolder list.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>activations</code></strong> (Variable length argument list of <a 
+          href="onep.policyservice.bulk.ActivationHolder-class.html" 
+          class="link">BulkService.ActivationHolder</a>) - The activation holder.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="async_activate_policy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">async_activate_policy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">listener</span>,
+        <span class="sig-arg">app_context</span>,
+        <span class="sig-arg">*activations</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Asynchronously activates the policy to its targets that are specified 
+  in the ActivationHolder list.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>activations</code></strong> (list of <a 
+          href="onep.policyservice.bulk.ActivationHolder-class.html" 
+          class="link">ActivationHolder</a>) - The activation holder.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - If error occurs when remote procedure call is made to network 
+        element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="deactivate_policy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">deactivate_policy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*activations</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>De-activates the policy from its targets that are specified in the 
+  ActivationHolder list.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>activations</code></strong> (List of <a 
+          href="onep.policyservice.bulk.ActivationHolder-class.html" 
+          class="link">ActivationHolder</a>) - The activation holder.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - error when remote procedure call is made to network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - If connection to network element fails.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="remove_statistic_listener"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_statistic_listener</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">listener</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes client statistic listener</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>listener</code></strong> ({PolicyStatsListener&lt;onep.policyservice.policymap.PolicyStatsListener&gt;}) - PolicyStatsListener class</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_policy_statistics"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_policy_statistics</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">filters</span>,
+        <span class="sig-arg">listener</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">app_context</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">opcode</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Retrieves statistics according to filter specifications.
+A list of PolicyStatistics classes are populated in PolicyStatFilter.stats_result.
+
+@param filters: one or more PolicyStatFilter classes
+@type filters: {PolicyMap&lt;onep.policyservice.PolicyMap.PolicyStatFilter&gt;}
+
+@param listener: PolicyStatsListener class created by user
+@type listener: l{PolicyStatsListener&lt;policymap.PolicyStatsListener&gt;)
+
+@param app_context: Optional context for application
+@type: app_context: Any Python object
+
+@raise OnepIllegalArgumentException: If nif or policy_map is invalid.
+@raise OnepRemoteProcedureException: If error occurs when remote procedure call is made to network element.
+@raise OnepConnectionException: If connection to network element fails.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:31 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

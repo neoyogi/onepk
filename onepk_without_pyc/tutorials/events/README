@@ -1,0 +1,98 @@
+Events Tutorial
+--------------------------
+
+This tutorial will show an application developer how to register for
+Network Element Events such as Syslog events, CDP events and CLI events.
+Event handlers for the above events will be run in their own thread.
+
+To run these tutorial:
+
+Notes: Make sure that the onep Python module is installed
+       Python version supported is 2.7.
+       
+       For NX-OS platforms only: To configure the network element to run an Events tutorial, you must 
+       first enable the EVMED feature, which allows developers to use Embedded Event Manager (EEM) to 
+       monitor Application-, CLI-, and Interface Statistics-based events and then schedule actions on the 
+       occurrence of those events:
+
+       router(config)# feature evmed
+       router(config)# sh feature |i evmed
+       evmed   enabled
+       
+    Usage:
+    
+    <TUTORIAL_NAME>.py -a <element hostname or address> \
+         [-t <transport_type>] \
+    	 [-C <client cert file> -K <client private key file> \
+    	 -R <root certificates file>] \
+    	 [-P <tls pinning file>]
+     
+    -a <element hostname or address> Network element's hostname or IP address.
+    -t <transport type> Transport type (tls|tipc).  Default is TLS.
+    -C <client cert file> Client certificate file required TLS client
+                          authentication.
+    -K <client private key file> Client private key file required for TLS
+                                 client authentication.
+    -R <CA certs file> CA certificates file required for TLS.
+    
+     The application will prompt the user to enter username and password that 
+     are configured on the network element you are connecting to.
+    
+     For more information on how to use TLS connection please refer to the 
+     Getting Started Guide.
+
+************************
+* SyslogEventTutorial
+************************
+
+This example application connects to the network element and listens for 'Interface'
+syslog message entered on the Network element's logger.
+
+After the application connects and registers for the syslog event, it itself
+triggers a Syslog event by simulating interface shutdown. When the Syslog message
+with "Interface" substring enters the Network element's logger the syslog event handler
+will be called. The event handler then prints out the Syslog message details.
+
+SyslogEventTutorial.py -a <element address or FQDN> [-t <transport_type>] \
+    	     [-C <client cert file> -K <client private key file> \
+    	      -R <root certificates file>]
+
+
+************************
+* CDPEventTutorial
+************************
+
+This example application connects to the network element and listens to
+CDP (Cisco Discovery Protocol) changes occurring on the Network element.
+
+Note: Test this application on a Network element that is connected to one or
+more Network elements.
+
+After the application connects and registers for the CDP events it listens to the
+periodic messages sent to a multicast address by the neighboring CDP-configured
+network elements. Whent those CDP messages are received the CDP event handler
+will be called.The event handler then prints out the CDP event details.
+
+
+CDPEventTutorial.py -a <element address or FQDN> [-t <transport_type>] \
+	      [-C <client cert file> -K <client private key file> \
+	       -R <root certificates file>]
+
+
+************************
+* CliEventTutorial
+************************
+
+This example application connects to the network element and listens to
+CLI commands entered on the Network element.
+
+The example CLI command use in this application is "show clock".
+After the application connects and registers for the CLI event, the user should enter
+"show clock" command on the network element. This will trigger the CLI event and the
+event handler will be called. Since the sync flag is set to true in this application,
+the default command will not be executed on the network element.
+Instead the sync_reply set by the event handler function will be returned.
+
+CliEventTutorial.py -a <element address or FQDN> [-t <transport_type>] \
+	      [-C <client cert file> -K <client private key file> \
+	       -R <root certificates file>]

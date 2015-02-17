@@ -1,0 +1,61 @@
+ Network Interfaces Tutorial
+--------------------------
+
+NetworkInterfaceTutorial.py tutorial connects to a network element and retrieves interface
+information about it.  The interface information includes a list of all interfaces plus
+property information about each interface.  Property information includes
+slot, port, speed, etc.  The tutorial also retrieves and displays interface
+configuration and status information.
+
+InterfaceStatisticsTutorial.py tutorial shows how to collect period stats on an interface
+through Interface statistics events. 
+Note: For NXOS only, make sure feature evmed is enabled on the connected device.
+
+InterfaceStateChangeTutorial.py tutorial shows how to add interface state change listener
+on an interface.
+
+InterfaceAddressTutorial that demostrates how to get and set an IP address of an Interface
+available on the Network element. 
+Note: Set Interface Address is supported on IOS and IOS-XE only.
+
+InterfaceCDPTutorial.py adds a CDP (Cisco Discovery Protocol) listener on a Network interface. 
+As a CDP-configured network interface sends periodic messages to a multicast address, they 
+are sent to the registered onePK
+
+To run these tutorial:
+
+Notes: Make sure that the onep Python module is installed
+       Python version supported is 2.7.
+       
+       For NX-OS platforms only: To configure the network element to run an Events tutorial, you must 
+       first enable the EVMED feature, which allows developers to use Embedded Event Manager (EEM) to 
+       monitor Application-, CLI-, and Interface Statistics-based events and then schedule actions on the 
+       occurrence of those events:
+
+       router(config)# feature evmed
+       router(config)# sh feature |i evmed
+       evmed   enabled
+       
+    Usage:
+    
+    <TUTORIAL_NAME>.py -a <element hostname or address> \
+             [-t <transport_type>] \
+    	     [-C <client cert file> -K <client private key file> \
+    	     -R <root certificates file>] \
+    	     [-P <tls pinning file>]
+     
+    -a <element hostname or address> Network element's hostname or IP address.
+    -t <transport type> Transport type (tls|tipc).  Default is TLS.
+    -C <client cert file> Client certificate file required TLS client
+                          authentication.
+    -K <client private key file> Client private key file required for TLS
+                                 client authentication.
+    -R <CA certs file> CA certificates file required for TLS.
+    
+     The application will prompt the user to enter username and password that 
+     are configured on the network element you are connecting to.
+    
+     For more information on how to use TLS connection please refer to the 
+     Getting Started Guide.
+
+

@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.vty.VtyService.VtyService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.vty-module.html">Package&nbsp;vty</a> ::
+        <a href="onep.vty.VtyService-module.html">Module&nbsp;VtyService</a> ::
+        Class&nbsp;VtyService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.vty.VtyService.VtyService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class VtyService</h1><p class="nomargin-top"></p>
+<center>
+
+</center>
+<hr />
+<p>The VtyService class represents a vty on a network element i.e. a 
+  cisco device.</p>
+  <p>VTY Service Set hides the commands executed through it. To view the 
+  commands executed through VTY, enable CLI logs as follows.</p>
+  <p>On NXOS, use vty.write(&quot;debug cli parser-detail&quot;) in your 
+  application, future onep_vty_write() will have the CLI logs in the 
+  response. Use vty.write(&quot;no debug cli parser-detail&quot;) to turn 
+  off CLI log or simply reopen vty session.</p>
+  <p>On IOS, use the following command to view CLI logs on the Router. 
+  &quot;show history all&quot;</p>
+  <p>On XR, use the following command to view CLI logs on the Router. 
+  &quot;show cli history detail&quot;</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Nested Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService.Listener-class.html" class="summary-name">Listener</a><br />
+      For internal use
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService.CmdResults-class.html" class="summary-name">CmdResults</a><br />
+      cmdResults is the collection of command results associated with the
+        VTY and last command run
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService.ParserState-class.html" class="summary-name">ParserState</a><br />
+      ParserState is used to determine what went wrong with a command 
+        block.
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">element</span>)</span><br />
+      Constructor</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#open" class="summary-sig-name">open</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Open a vty on the network element with the default cmd interpreter - 
+      no control messages</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#set_output_format" class="summary-sig-name">set_output_format</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">format</span>)</span><br />
+      Set the output format for vty This API can only be used before the 
+      vty is opened.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#write" class="summary-sig-name">write</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">s</span>)</span><br />
+      Write a String to a vty on the network element</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#write_0" class="summary-sig-name">write_0</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">s</span>,
+        <span class="summary-sig-arg">typeahead</span>)</span><br />
+      Write a String to a vty on the network element with a typeahead list</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#close" class="summary-sig-name">close</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Close a vty.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#cancel" class="summary-sig-name">cancel</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Cancel command execution.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#get_parser_state" class="summary-sig-name">get_parser_state</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the state of the parser after the last command 
+      interpretation.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_open"></a><span class="summary-sig-name">is_open</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns true if a connected vty exists between the network element 
+      and application.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.vty.VtyService.VtyService-class.html#destroy" class="summary-sig-name">destroy</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Done with VtyService instance so destroy it</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService-class.html#OnepVtyState" class="summary-name">OnepVtyState</a> = <code title="enum('ONEP_VTY_STATE_DISCONNECTED', 'ONEP_VTY_STATE_CONNECTING', 'ONEP\
+_VTY_STATE_CONNECTED', 'ONEP_VTY_STATE_IDLE_TIMEOUT', 'ONEP_VTY_STATE_\
+INVALID')">enum('ONEP_VTY_STATE_DISCONNECTED', 'ONEP_VTY_S<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService-class.html#OnepVtyCmdInterp" class="summary-name">OnepVtyCmdInterp</a> = <code title="enum('ONEP_VTY_CMD_IOS_SH', 'ONEP_VTY_CMD_TCL')">enum('ONEP_VTY_CMD_IOS_SH', 'ONEP_VTY_CMD_T<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService-class.html#OnepVtyOutputFormat" class="summary-name">OnepVtyOutputFormat</a> = <code title="enum('ONEP_VTY_OUTPUT_FORMAT_TLV', 'ONEP_VTY_OUTPUT_FORMAT_TEXT', 'ONE\
+P_VTY_OUTPUT_FORMAT_XML')">enum('ONEP_VTY_OUTPUT_FORMAT_TLV', 'ONEP<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="log"></a><span class="summary-name">log</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="element"></a><span class="summary-name">element</span><br />
+      The Network Element associated with this VTY service
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService-class.html#max_response" class="summary-name">max_response</a><br />
+      The maximum response byte length.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.vty.VtyService.VtyService-class.html#timeout" class="summary-name">timeout</a><br />
+      The maximum length to wait for a Network Element response in seconds
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">element</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+Constructor
+
+@raise OnepIllegalArgumentException
+            The exception is thrown when the input argument is invalid
+@raise OnepConnectionException:
+            The exception is thrown when the connection to a network element
+            has failed.
+@raise OnepRemoteProcedureException:
+            The exception is thrown when an error has occurred in the
+            remote procedure call made to a network element.
+@raise OnepException:
+            The exception is thrown when the server returns an invalid CPU
+            sampling interval value.
+
+@param  element: The Network Element on which to open the vty
+
+</pre>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="open"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">open</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Open a vty on the network element with the default cmd interpreter - 
+  no control messages</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the server returns an invalid CPU 
+        sampling interval value.</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        On XR, &quot;aaa authorization eventmanager default local&quot; 
+        must be configured in config mode, otherwise open() will fail to 
+        get a valid handle. Also, the device should have &quot;hostname 
+        &lt;whatever-hostname&gt;&quot; config. aaa authorization commands 
+        default &lt;group | none&gt;&quot; is recommended to config prior 
+        to use.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="set_output_format"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_output_format</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">format</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set the output format for vty This API can only be used before the vty
+  is opened. It will raise an exception if vty is already open.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>format</code></strong> (<code class="link">OnepVtyOutputFormat</code>) - The vty output format to be set on the network element</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the vty is already open and this API 
+        is called.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">s</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write a String to a vty on the network element</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>s</code></strong> - The String to write to the vty</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The interpreted result from the Network Element</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the server returns an invalid CPU 
+        sampling interval value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_0"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_0</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">s</span>,
+        <span class="sig-arg">typeahead</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write a String to a vty on the network element with a typeahead 
+  list</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>s</code></strong> - The String to write to the vty</li>
+        <li><strong class="pname"><code>typeAhead</code></strong> - The list of strings to type ahead of running the command</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>The interpreted result from the Network Element</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the server returns an invalid CPU 
+        sampling interval value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="close"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">close</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Close a vty.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the server returns an invalid CPU 
+        sampling interval value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="cancel"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cancel</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Cancel command execution.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the server returns an invalid CPU 
+        sampling interval value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_parser_state"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_parser_state</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the state of the parser after the last command 
+  interpretation.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>The parser state</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException-module.html#OnepConnectionException">OnepConnectionException</a></strong></code> - The exception is thrown when the connection to a network element 
+        has failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException-module.html#OnepRemoteProcedureException">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepException-module.html#OnepException">OnepException</a></strong></code> - The exception is thrown when the server returns an invalid CPU 
+        sampling interval value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="destroy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">destroy</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Done with VtyService instance so destroy it</p>
+  <p>Throws OnepVtyNotClosed if VTY service is still open</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variable Details</span></td>
+</tr>
+</table>
+<a name="OnepVtyState"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">OnepVtyState</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_VTY_STATE_DISCONNECTED', 'ONEP_VTY_STATE_CONNECTING', 'ONEP<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+_VTY_STATE_CONNECTED', 'ONEP_VTY_STATE_IDLE_TIMEOUT', 'ONEP_VTY_STATE_<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+INVALID')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="OnepVtyCmdInterp"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">OnepVtyCmdInterp</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_VTY_CMD_IOS_SH', 'ONEP_VTY_CMD_TCL')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="OnepVtyOutputFormat"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">OnepVtyOutputFormat</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('ONEP_VTY_OUTPUT_FORMAT_TLV', 'ONEP_VTY_OUTPUT_FORMAT_TEXT', 'ONE<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+P_VTY_OUTPUT_FORMAT_XML')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Property Details</span></td>
+</tr>
+</table>
+<a name="max_response"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">max_response</h3>
+  <p>The maximum response byte length. Responses truncated to this length. 
+  Zero is unlimited</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.max_response(<span class="summary-sig-arg">self</span>)</span>
+        - The maximum response byte length.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.max_response(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">max</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="timeout"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">timeout</h3>
+  <p>The maximum length to wait for a Network Element response in 
+  seconds</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.timeout(<span class="summary-sig-arg">self</span>)</span>
+        - The maximum length to wait for a Network Element response in seconds
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.timeout(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">time_out</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:34 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

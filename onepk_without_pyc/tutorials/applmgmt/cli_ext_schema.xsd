@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 sp1 (x64) (http://www.altova.com) by Lisa Huang (Cisco Systems, Inc.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cli_ext="http://www.cisco.com/onep/cli_ext:0.1" xmlns="http://www.cisco.com/onep/cli_ext:0.1" targetNamespace="http://www.cisco.com/onep/cli_ext:0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="application">
+        <xs:annotation>
+            <xs:documentation>The application must have a name.  The name will be used as the top level CLI keyword.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:choice>
+                    <xs:element name="config-cmds" type="config-cmds-type">
+                        <xs:unique name="uniqueCommandName" id="uniqueCommandName">
+                            <xs:annotation>
+                                <xs:documentation>command name is unique.</xs:documentation>
+                            </xs:annotation>
+                            <xs:selector xpath="*"/>
+                            <xs:field xpath="@name"/>
+                        </xs:unique>
+                    </xs:element>
+                    <xs:element name="show-cmds" type="show-cmds-type"/>
+                    <xs:element name="exec-cmds" type="exec-cmds-type"/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="app-name" use="required">
+                <xs:annotation>
+                    <xs:documentation>This string is used as the entry level parser keyword.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="version" use="required">
+                <xs:annotation>
+                    <xs:documentation>This string is used as the version text in the parser.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="app-namespace" use="required">
+                <xs:annotation>
+                    <xs:documentation>Namespace used for the CLI app specific xsd.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:anyURI"/>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="app-namespace-prefix" use="required">
+                <xs:annotation>
+                    <xs:documentation>Namespace prefix used for the CLI app specific xsd.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="app-mode-prompt-prefix" use="required">
+                <xs:annotation>
+                    <xs:documentation>The prefix used for the CLI mode prompt.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string"/>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="description" use="optional">
+                <xs:annotation>
+                    <xs:documentation>This string is used as the help text in the parser.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="255"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="show-cmds-type">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="exec-cmd" type="exec-cmd-type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="exec-cmd-type">
+        <xs:complexContent>
+            <xs:extension base="cmd-type">
+                <xs:sequence maxOccurs="unbounded">
+                    <xs:choice minOccurs="1">
+                        <xs:element name="keyword" type="optional-keyword-type" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="param" type="optional-param-type" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:choice>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="config-cmds-type">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="scalar-cmd" type="scalar-cmd-type" maxOccurs="unbounded"/>
+                <xs:element name="list-cmd" type="list-cmd-type" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="exec-cmds-type">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="exec-cmd" type="exec-cmd-type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cmd-type">
+        <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="list-cmd-type">
+        <xs:complexContent>
+            <xs:extension base="cmd-type">
+                <xs:sequence>
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element name="keyword" type="keyword-type" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="param" type="cli_ext:key-param-type" maxOccurs="unbounded"/>
+                    </xs:choice>
+                    <xs:element name="mode" type="mode-type" minOccurs="0" maxOccurs="1">
+                        <xs:unique name="uniquemodeCommandName">
+                            <xs:annotation>
+                                <xs:documentation>command name is unique.</xs:documentation>
+                            </xs:annotation>
+                            <xs:selector xpath="*"/>
+                            <xs:field xpath="@name"/>
+                        </xs:unique>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="keyword-type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="help" type="helpType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="optional-keyword-type">
+        <xs:complexContent>
+            <xs:extension base="keyword-type">
+                <xs:attribute name="is-optional" type="xs:boolean" default="false"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="param-type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="help" type="helpType"/>
+            <xs:element name="type" type="onep-simple-type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="key-param-type">
+        <xs:complexContent>
+            <xs:extension base="param-type">
+                <xs:attribute name="is-key"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="optional-param-type">
+        <xs:complexContent>
+            <xs:extension base="param-type">
+                <xs:attribute name="is-optional" type="xs:boolean" default="false"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="scalar-cmd-type">
+        <xs:complexContent>
+            <xs:extension base="cmd-type">
+                <xs:sequence>
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element name="keyword" type="optional-keyword-type" maxOccurs="unbounded"/>
+                        <xs:element name="param" type="optional-param-type" maxOccurs="unbounded"/>
+                    </xs:choice>
+                    <xs:element name="mode" type="mode-type" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="mode-type">
+        <xs:sequence>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="scalar-cmd" type="scalar-cmd-type" maxOccurs="unbounded"/>
+                <xs:element name="list-cmd" type="list-cmd-type" maxOccurs="unbounded"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="mode-prompt" use="required">
+            <xs:annotation>
+                <xs:documentation>This string is used as mode prompt.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="100"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="onep-simple-type">
+        <xs:choice>
+            <xs:element name="string">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="pattern" type="xs:string" minOccurs="0">
+                            <xs:annotation>
+                                <xs:documentation>The value (xs:pattern value) must be a ·regular expression· as defined in W3C XML Schema Definition Language (XSD) 1.1. http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#regexs</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--<xs:element name="enumeration">
+                <xs:complexType>
+                    <xs:sequence maxOccurs="unbounded">
+                        <xs:element name="value" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>-->
+            <xs:element name="integer">
+                <xs:complexType>
+                    <xs:sequence minOccurs="0">
+                        <xs:element name="min" type="xs:integer" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>minInclusive</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="max" type="xs:integer" minOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>maxInclusive</xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ipv4-address"/>
+            <xs:element name="ipv6-address"/>
+            <xs:element name="ipv4-mask"/>
+            <xs:element name="ipv6-mask"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:simpleType name="helpType">
+        <xs:annotation>
+            <xs:documentation>Description string</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <!--<xs:pattern value="[&#x20;-&#x21;&#x23;-&#x26;&#x28;-&#x7E;]*"/>-->
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ipv4-address">
+        <xs:annotation>
+            <xs:documentation>The ipv4-address type represents an IPv4 address in
+        dotted-quad notation.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="ipv6-address">
+        <xs:annotation>
+            <xs:documentation>The ipv6-address type represents an IPv6 address in full,
+      and shortened notation. </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="ipv4-mask">
+        <xs:annotation>
+            <xs:documentation>The ipv4-mask type represents an IPv4 address mask in
+        dotted-quad notation.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="ipv6-mask">
+        <xs:annotation>
+            <xs:documentation>The ipv6-mask type represents an IPv6 address mask in full,
+      and shortened notation. </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="string_key_attr_abstract">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="key"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="integer_key_attr_abstract">
+        <xs:simpleContent>
+            <xs:extension base="xs:integer">
+                <xs:attribute name="key"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

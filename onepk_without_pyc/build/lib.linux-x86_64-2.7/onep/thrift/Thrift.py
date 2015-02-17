@@ -1,0 +1,130 @@
+# 2015.02.05 17:20:16 IST
+import sys
+
+class TType:
+    STOP = 0
+    VOID = 1
+    BOOL = 2
+    BYTE = 3
+    I08 = 3
+    DOUBLE = 4
+    I16 = 6
+    I32 = 8
+    I64 = 10
+    STRING = 11
+    UTF7 = 11
+    STRUCT = 12
+    MAP = 13
+    SET = 14
+    LIST = 15
+    UTF8 = 16
+    UTF16 = 17
+    _VALUES_TO_NAMES = ('STOP', 'VOID', 'BOOL', 'BYTE', 'DOUBLE', None, 'I16', None, 'I32', None, 'I64', 'STRING', 'STRUCT', 'MAP', 'SET', 'LIST', 'UTF8', 'UTF16')
+
+
+class TMessageType:
+    CALL = 1
+    REPLY = 2
+    EXCEPTION = 3
+    ONEWAY = 4
+
+
+class TProcessor:
+    """Base class for procsessor, which works on two streams."""
+
+
+    def process(iprot, oprot):
+        pass
+
+
+
+
+class TException(Exception):
+    """Base class for all thrift exceptions."""
+
+
+    def __init__(self, message = None):
+        Exception.__init__(self, message)
+        self.message = message
+
+
+
+
+class TApplicationException(TException):
+    """Application level thrift exceptions."""
+
+    UNKNOWN = 0
+    UNKNOWN_METHOD = 1
+    INVALID_MESSAGE_TYPE = 2
+    WRONG_METHOD_NAME = 3
+    BAD_SEQUENCE_ID = 4
+    MISSING_RESULT = 5
+    INTERNAL_ERROR = 6
+    PROTOCOL_ERROR = 7
+
+    def __init__(self, type = UNKNOWN, message = None):
+        TException.__init__(self, message)
+        self.type = type
+
+
+
+    def __str__(self):
+        if self.message:
+            return self.message
+        else:
+            if self.type == self.UNKNOWN_METHOD:
+                return 'Unknown method'
+            if self.type == self.INVALID_MESSAGE_TYPE:
+                return 'Invalid message type'
+            if self.type == self.WRONG_METHOD_NAME:
+                return 'Wrong method name'
+            if self.type == self.BAD_SEQUENCE_ID:
+                return 'Bad sequence ID'
+            if self.type == self.MISSING_RESULT:
+                return 'Missing result'
+            return 'Default (unknown) TApplicationException'
+
+
+
+    def read(self, iprot):
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid,) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.STRING:
+                    self.message = iprot.readString()
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.I32:
+                    self.type = iprot.readI32()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+
+        iprot.readStructEnd()
+
+
+
+    def write(self, oprot):
+        oprot.writeStructBegin('TApplicationException')
+        if self.message != None:
+            oprot.writeFieldBegin('message', TType.STRING, 1)
+            oprot.writeString(self.message)
+            oprot.writeFieldEnd()
+        if self.type != None:
+            oprot.writeFieldBegin('type', TType.I32, 2)
+            oprot.writeI32(self.type)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+
+
+
+# decompiled 1 files: 1 okay, 0 failed, 0 verify failed
+# 2015.02.05 17:20:16 IST

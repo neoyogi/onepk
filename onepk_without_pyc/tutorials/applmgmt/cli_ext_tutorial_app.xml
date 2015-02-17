@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+config
+    app-category name <name>
+ 
+    app-stats <stat>
+          user user-count <count> 
+          price amount <amount>
+          
+
+show 
+          sh onep application cli_tutorial_app v0.2 <config-domain> [<instance-name>] app-category
+          sh onep application cli_tutorial_app v0.2 <config-domain> [<instance-name>] statistics
+          
+-->
+<?xml-stylesheet type="text/xsl" href="xml2xsd-convertor.xslt"?>
+<cli_ext:application app-name="cli_tutorial_app" version="0.2" description="Cli Extension Tutorial Application" app-namespace-prefix="demo" app-mode-prompt-prefix="demo" app-namespace="http://www.cisco.com/demo_app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cli_ext="http://www.cisco.com/onep/cli_ext:0.1" xsi:schemaLocation="http://www.cisco.com/onep/cli_ext:0.1 cli_ext_schema.xsd">
+  <cli_ext:config-cmds>
+    <cli_ext:scalar-cmd name="app_category_cmd">
+      <cli_ext:keyword>
+        <cli_ext:name>app-category</cli_ext:name>
+        <cli_ext:help>config onep app category name</cli_ext:help>
+      </cli_ext:keyword>
+      <cli_ext:param>
+		<cli_ext:name>name</cli_ext:name>
+		<cli_ext:help>string</cli_ext:help>
+		<cli_ext:type>
+				<cli_ext:string/>
+		</cli_ext:type>
+	  </cli_ext:param>
+    </cli_ext:scalar-cmd>
+     <cli_ext:list-cmd name="app_stat_cmd">
+     		<cli_ext:param>
+			 <cli_ext:name>app-stats</cli_ext:name>
+				<cli_ext:help>add app statistics</cli_ext:help>
+				<cli_ext:type>
+					<cli_ext:string/>
+				</cli_ext:type>
+				</cli_ext:param>
+        <cli_ext:mode mode-prompt="stat">
+        <cli_ext:scalar-cmd name="users_cmd">
+		<cli_ext:keyword>
+			<cli_ext:name>users</cli_ext:name>
+			<cli_ext:help>Number of users</cli_ext:help>
+		</cli_ext:keyword>
+		<cli_ext:param>
+			<cli_ext:name>count</cli_ext:name>
+			<cli_ext:help>count</cli_ext:help>
+			<cli_ext:type>
+				<cli_ext:integer/>
+			</cli_ext:type>
+		</cli_ext:param>
+		</cli_ext:scalar-cmd>
+		<cli_ext:scalar-cmd name="price_cmd">
+		<cli_ext:keyword>
+			<cli_ext:name>price</cli_ext:name>
+			<cli_ext:help>purchase price</cli_ext:help>
+		</cli_ext:keyword>
+		<cli_ext:param>
+			<cli_ext:name>amount</cli_ext:name>
+			<cli_ext:help>number</cli_ext:help>
+			<cli_ext:type>
+				<cli_ext:integer/>
+			</cli_ext:type>
+		</cli_ext:param>
+		</cli_ext:scalar-cmd>
+		</cli_ext:mode>
+		</cli_ext:list-cmd>
+  </cli_ext:config-cmds>
+  <cli_ext:show-cmds>
+	<cli_ext:exec-cmd name="show_category_cmd">
+			<cli_ext:keyword>
+				<cli_ext:name>app-category</cli_ext:name>
+				<cli_ext:help>show onep app's category name</cli_ext:help>
+			</cli_ext:keyword>
+	</cli_ext:exec-cmd>
+	<cli_ext:exec-cmd name="show_stat_cmd">
+			<cli_ext:keyword>
+				<cli_ext:name>statistics</cli_ext:name>
+				<cli_ext:help>onep app statistics</cli_ext:help>
+			</cli_ext:keyword>
+	</cli_ext:exec-cmd>
+  </cli_ext:show-cmds>
+  
+  <cli_ext:exec-cmds>
+		<cli_ext:exec-cmd name="clear_stat_cmd">
+			<cli_ext:keyword>
+				<cli_ext:name>clear</cli_ext:name>
+				<cli_ext:help>clear</cli_ext:help>
+			</cli_ext:keyword>
+			<cli_ext:keyword>
+				<cli_ext:name>statistics</cli_ext:name>
+				<cli_ext:help>statistics</cli_ext:help>
+			</cli_ext:keyword>
+		
+		</cli_ext:exec-cmd>
+	</cli_ext:exec-cmds>
+</cli_ext:application>

@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>onep.routing.AppRouteTable.AppRouteTable</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="onep-module.html">Package&nbsp;onep</a> ::
+        <a href="onep.routing-module.html">Package&nbsp;routing</a> ::
+        <a href="onep.routing.AppRouteTable-module.html">Module&nbsp;AppRouteTable</a> ::
+        Class&nbsp;AppRouteTable
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="onep.routing.AppRouteTable.AppRouteTable-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class AppRouteTable</h1><p class="nomargin-top"></p>
+<center>
+
+</center>
+<hr />
+<p>This class represents an application route table. It provides 
+  application the ability to add, remove and replace route from the 
+  application route table. The following services are provided:</p>
+  <p>Add, replace and remove route from the application route table.Get 
+  notification when the added application route is promoted or demoted in 
+  the RIB.</p>
+  <p>Depending on platform, the application route table could do extra 
+  check before adding the route to the RIB. For example, route may be added
+  to the RIB when the next hop is resolvable.</p>
+  <p>Once the application accept and return success for the operation, the 
+  application is responsible to keep the state of the routes consistent 
+  across HA switchover.</p>
+  <p>The route added will not be visible in the configuration. But the 
+  added route would be visible in routing related show commands. The show 
+  output will be able to tell which application added the route. The added 
+  route are redistributable.</p>
+  <p>If a listener is registered, the application route table will provide 
+  notification when an application route gets promoted or demoted in the 
+  RIB.</p>
+  <p>Currently, only add/delete/update route operations are supported.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>list</code> of <a 
+      href="onep.routing.L3UnicastRouteOperation-module.html" 
+      class="link">L3UnicastRouteOperation</a></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.routing.AppRouteTable.AppRouteTable-class.html#update_routes" class="summary-sig-name">update_routes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scope</span>,
+        <span class="summary-sig-arg">opList</span>)</span><br />
+      Update a route.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.routing.AppRouteTable.AppRouteTable-class.html#async_update_routes" class="summary-sig-name">async_update_routes</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">scope</span>,
+        <span class="summary-sig-arg">op_list</span>,
+        <span class="summary-sig-arg">listener</span>,
+        <span class="summary-sig-arg">client_data</span>)</span><br />
+      Asynchronously update a route.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.routing.AppRouteTable.AppRouteTable-class.html#add_route_state_listener" class="summary-sig-name">add_route_state_listener</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">routeStateListener</span>,
+        <span class="summary-sig-arg">scope</span>,
+        <span class="summary-sig-arg">flags</span>,
+        <span class="summary-sig-arg">clientData</span>)</span><br />
+      Adds a route state listener to the ART object.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.routing.AppRouteTable.AppRouteTable-class.html#remove_route_state_listener" class="summary-sig-name">remove_route_state_listener</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">eventHandle</span>)</span><br />
+      Removes the RouteStateListener listener object.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.routing.AppRouteTable.AppRouteTable-class.html#add_replay_route_event_listener" class="summary-sig-name">add_replay_route_event_listener</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">listener</span>,
+        <span class="summary-sig-arg">scope</span>,
+        <span class="summary-sig-arg">client_data</span>)</span><br />
+      Adds a replay route event listener to the RIB object.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="onep.routing.AppRouteTable.AppRouteTable-class.html#remove_replay_route_event_listener" class="summary-sig-name">remove_replay_route_event_listener</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">eventHandle</span>)</span><br />
+      Removes the ReplayRouteEventListener listener object.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="onep.routing.AppRouteTable.AppRouteTable-class.html#RouteState" class="summary-name">RouteState</a> = <code title="enum('PROMOTE', 'DEMOTE')">enum('PROMOTE', 'DEMOTE')</code><br />
+      This enum represents a route state and support L2/L3 and IPv4/IPv6.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TRIGER_INITIAL_WALK"></a><span class="summary-name">TRIGER_INITIAL_WALK</span> = <code title="1">1</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Properties</span></td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="update_routes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update_routes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">scope</span>,
+        <span class="sig-arg">opList</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update a route. It is a synchronous API. It is used to add, delete and
+  replace single route in the Application Route Table. The type of 
+  operation is indicated by RouteOperationType parameter.</p>
+  <p>For route addition: If the route do not exist, create route with the 
+  provided next hops. If the route already exist in the table, any new next
+  hop specified is added to the route. Duplicated next hop is ignored.</p>
+  <p>For route replace: If the route do not exist, it act like route 
+  addition operation. If the route already exist in the table, the all the 
+  old next hops are removed and new next hops specified are added to the 
+  route.</p>
+  <p>For route deletion: Next hop specified will be removed. If no next hop
+  is specified, then all next hops are removed. The route will be removed 
+  when no more next hops exist.</p>
+  <p>Return error if the scope and route is not consistent.</p>
+  <p>This method will make remote procedure call and response time may be 
+  long.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>scope</code></strong> (<a href="onep.routing.L3UnicastScope-module.html" 
+          class="link">L3UnicastScope</a>) - Indicate which table in the Application Route Table to send the 
+          route operation too.</li>
+        <li><strong class="pname"><code>opList</code></strong> (<code>list</code> of <a 
+          href="onep.routing.L3UnicastRouteOperation-module.html" 
+          class="link">L3UnicastRouteOperation</a>) - The list of route operation. If API succeeds, per route per next 
+          hop status are returned and could be accessed using 
+          Route.error_code and NextHop.eror_code</li>
+    </ul></dd>
+    <dt>Returns: <code>list</code> of <a 
+      href="onep.routing.L3UnicastRouteOperation-module.html" 
+      class="link">L3UnicastRouteOperation</a></dt>
+        <dd>A list of the route operation. This list is a copy of the routes 
+          in the input parameter, with error code for each route added.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - This exception is thrown if the scope and route are not consistent</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when connection to the network element has 
+        failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="async_update_routes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">async_update_routes</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">scope</span>,
+        <span class="sig-arg">op_list</span>,
+        <span class="sig-arg">listener</span>,
+        <span class="sig-arg">client_data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Asynchronously update a route. It is an asynchronous API that will 
+  return immediately and the application provided listener will be invoked 
+  when the all the route update requests are processed by the network 
+  element.</p>
+  <p>It is used to add, delete and replace single route in the Application 
+  Route Table. The type of operation is indicated by RouteOperationType 
+  parameter.</p>
+  <p>For route addition: If the route do not exist, create route with the 
+  provided next hops. If the route already exist in the table, any new next
+  hop specified is added to the route Duplicated next hop is ignored.</p>
+  <p>For route replace: If the route do not exist, it act like route 
+  addition operation. If the route already exist in the table, the all the 
+  old next hops are removed and new next hops specified are added to the 
+  route.</p>
+  <p>If no next hop is specified, then all next hops are removed. The route
+  will be removed when no more next hops exist.</p>
+  <p>Return error if the scope and route is not consistent.</p>
+  <p>This method will make remote procedure call and response time may be 
+  long.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>scope</code></strong> (<a href="onep.routing.Scope-module.html" class="link">Scope</a>) - Indicate which table in the Application Route Table to send the 
+          route operation too.</li>
+        <li><strong class="pname"><code>op_list</code></strong> (<code>list</code> of <a 
+          href="onep.routing.L3UnicastRouteOperation-module.html" 
+          class="link">L3UnicastRouteOperation</a>) - The list of route operation. If API succeeds, per route per next 
+          hop status are returned and could be accessed using 
+          Route.error_code and NextHop.error_code</li>
+        <li><strong class="pname"><code>listener</code></strong> (<a href="onep.routing.UpdateRouteResponse-module.html" 
+          class="link">UpdateRouteResponseListener</a>) - The UpdateRouteResponseListener object that handles the events.</li>
+        <li><strong class="pname"><code>client_data</code></strong> - The client data associated with the listener. This client data 
+          will be part of input parameters when the handleEvent method in 
+          the listener is invoked.</li>
+    </ul></dd>
+    <dt>Returns: <code>int</code></dt>
+        <dd>An identifier for this asynchronous update request. Could be used
+          to monitor the status or cancel the request.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - This exception is thrown if the scope and route are not consistent</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when connection to the network element has 
+        failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_route_state_listener"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_route_state_listener</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">routeStateListener</span>,
+        <span class="sig-arg">scope</span>,
+        <span class="sig-arg">flags</span>,
+        <span class="sig-arg">clientData</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds a route state listener to the ART object.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>routeStateListener</code></strong> (<a href="onep.routing.ARTRouteStateListener-module.html" 
+          class="link">ARTRouteStateListener</a>) - The RouteStateListener object that handles the events.</li>
+        <li><strong class="pname"><code>scope</code></strong> (<a href="onep.routing.L3UnicastScope-module.html" 
+          class="link">L3UnicastScope</a>) - Indicate which table in the Application Route Table get 
+          notification from.</li>
+        <li><strong class="pname"><code>flags</code></strong> (<code>int</code>) - Additional flags to be passed to listener. This argument is 
+          reserved for future use and ignored at present.</li>
+        <li><strong class="pname"><code>clientData</code></strong> - The client data associated with the listener. This client data 
+          will be part of input parameters when the handleEvent method in 
+          the listener is invoked.</li>
+    </ul></dd>
+    <dt>Returns: <code>int</code></dt>
+        <dd>EventHandle, a numeric ID associated with this event 
+          registration. The eventHandle is used to unregister the listener 
+          using the remove_route_state_listener method If registration 
+          fails, -1 is returned.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - The exception is thrown when the listener or other parameters is 
+        not valid.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when connection to a network element has 
+        failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="remove_route_state_listener"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_route_state_listener</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">eventHandle</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes the RouteStateListener listener object. This method will 
+  remove the listener associated with the specified eventHandle and also 
+  remove the corresponding registered event on the route table.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>eventHandle</code></strong> (<code>int</code>) - Registered event identifier.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - The exception is thrown when eventHandle is not valid or is 
+        unregistered already.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when connection to a network element has 
+        failed.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_replay_route_event_listener"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_replay_route_event_listener</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">listener</span>,
+        <span class="sig-arg">scope</span>,
+        <span class="sig-arg">client_data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds a replay route event listener to the RIB object.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>listener</code></strong> (<a href="onep.routing.ReplayRouteEventListener-module.html" 
+          class="link">ReplayRouteEventListener</a>) - The ReplayRouteEventListener object that handles the events.</li>
+        <li><strong class="pname"><code>scope</code></strong> (<a href="onep.routing.L3UnicastScope-module.html" 
+          class="link">L3UnicastScope</a>) - Indicate which table in the Application Route Table get 
+          notification from.</li>
+        <li><strong class="pname"><code>client_data</code></strong> - The client data associated with the listener. This client data 
+          will be part of input parameters when the handleEvent method in 
+          the listener is invoked.</li>
+    </ul></dd>
+    <dt>Returns: <code>int</code></dt>
+        <dd>EventHandle, a numeric ID associated with this event 
+          registration. The eventHandle is used to unregister the listener 
+          using the remove_route_state_listener method If registration 
+          fails, -1 is returned.</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - The exception is thrown when the listener or other parameters is 
+        not valid.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when connection to a network element has 
+        failed.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="remove_replay_route_event_listener"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">remove_replay_route_event_listener</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">eventHandle</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes the ReplayRouteEventListener listener object. This method will
+  remove the listener associated with the specified eventHandle and also 
+  remove the corresponding registered event on the route table.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>eventHandle</code></strong> (<code>int</code>) - Registered event identifier.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepIllegalArgumentException.OnepIllegalArgumentException-class.html">OnepIllegalArgumentException</a></strong></code> - The exception is thrown when eventHandle is not valid or is 
+        unregistered already.</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepRemoteProcedureException.OnepRemoteProcedureException-class.html">OnepRemoteProcedureException</a></strong></code> - The exception is thrown when an error has occurred in the remote 
+        procedure call made to a network element</li>
+        <li><code><strong class='fraise'><a href="onep.core.exception.OnepConnectionException.OnepConnectionException-class.html">OnepConnectionException</a></strong></code> - The exception is thrown when connection to a network element has 
+        failed.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variable Details</span></td>
+</tr>
+</table>
+<a name="RouteState"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">RouteState</h3>
+  <p>This enum represents a route state and support L2/L3 and IPv4/IPv6. 
+  Indicates the route becomes the best route in the RIB.'PROMOTE', 
+  Indicates the route is no longer the best route in the RIB.'DEMOTE'</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+enum('PROMOTE', 'DEMOTE')
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="onep-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><div id="header"><div style="float:left; width:50px;"><img style="margin-top: 10px; margin-left:10px" src="ciscologo_grey.jpg"></div><div style="float:right; width:250px; text-align:center;"><b>Cisco onePK Python Reference</b><br><br><a target="_blank" href="http://developer.cisco.com/web/onepk">onePK Developer</a><br><br><a href="mailto:onepk-feedback@cisco.com">onepk-feedback@cisco.com</a></div><div style="clear: both"></div></div></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Aug 18 09:17:33 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
